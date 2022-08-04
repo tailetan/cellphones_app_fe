@@ -1,0 +1,27 @@
+.admin-overview-card {
+    border-radius: 6px;
+}
+
+.admin-overview-card.red-card {
+    background: #ffdbdb;
+    border: 4px solid #ff0000;
+}
+
+.admin-overview-card.green-card {
+    background: #dbffe2;
+    border: 4px solid #2bc155;
+}
+
+.admin-overview-card.blue-card {
+    background: #dbfff7;
+    border: 4px solid #63b0e3;
+}
+
+.admin-overview-card.purple-card {
+    background: #dedbff;
+    border: 4px solid #2814ff;
+}
+
+.admin-overview-card .icon {
+    border-radius: 50%;
+}

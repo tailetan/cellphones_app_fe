@@ -1,0 +1,47 @@
+[
+  {
+    "id": "no",
+    "sortable": false,
+    "label": "#"
+  },
+  {
+    "id": "image",
+    "sortable": false,
+    "label": "Ảnh"
+  },
+  {
+    "id": "title",
+    "sortable": false,
+    "label": "Tên sản phẩm"
+  },
+  {
+    "id": "price",
+    "sortable": false,
+    "label": "Giá"
+  },
+  {
+    "id": "category",
+    "sortable": false,
+    "label": "Danh mục"
+  },
+  {
+    "id": "createdDate",
+    "sortable": false,
+    "label": "Ngày tạo"
+  },
+  {
+    "id": "updateDate",
+    "sortable": false,
+    "label": "Ngày chỉnh sửa"
+  },
+  {
+    "id": "status",
+    "sortable": false,
+    "label": "Trạng thái"
+  },
+  {
+    "id": "action",
+    "sortable": false,
+    "label": "Tác vụ"
+  }
+]

@@ -1,0 +1,183 @@
+/* Font Weight */
+.font-weight-light {
+  font-weight: 300;
+}
+
+.font-weight-regular {
+  font-weight: 400;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.font-weight-semi {
+  font-weight: 600;
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+/* Font Size */
+.font-10 {
+  font-size: 0.625rem;
+}
+
+.font-12 {
+  font-size: 0.75rem;
+}
+
+.font-20 {
+  font-size: 1.25rem;
+}
+
+/* Line Height */
+.line-height-1-2 {
+  line-height: 1.2;
+}
+
+.line-height-2 {
+  line-height: 2;
+}
+
+/* Hover */
+.text-hover-underline:hover {
+  text-decoration: underline;
+}
+
+/* Round */
+.rounded {
+  border-radius: 0.25rem;
+}
+
+/* Border */
+.border {
+  border: 1px solid #dee2e6 !important;
+}
+
+/* Style Icon */
+.icon-cps-alepay {
+  width: 50px;
+  height: 30px;
+  background-size: 420px;
+  background-position: -157px -152px;
+}
+
+.icon-cps-zalopay {
+  width: 50px;
+  height: 30px;
+  background-size: 420px;
+  background-position: -210px -153px;
+}
+
+.icon-cps-vnpay {
+  width: 50px;
+  height: 30px;
+  background-size: 320px;
+  background-position: -203px -113px;
+}
+
+.icon-cps-moca {
+  background-image: url(https://cdn.cellphones.com.vn/media/logo/Moca-Logo.png) !important;
+  width: 50px;
+  height: 30px;
+  background-size: cover;
+}
+
+.icon-cps-onepay {
+  background-image: url(https://cdn.cellphones.com.vn/media/logo/onepay.png) !important;
+  width: 50px;
+  height: 30px;
+  background-size: contain;
+  background-position: center;
+}
+
+.icon-cps-kredivo {
+  background-image: url(https://cdn.cellphones.com.vn/media/logo/kredivo-logo.png) !important;
+  width: 50px;
+  height: 30px;
+  background-size: cover;
+}
+
+.icon-cps-mpos {
+  width: 50px;
+  height: 30px;
+  background-size: 380px;
+  background-position: 2px -161px;
+}
+
+.icon-dtv {
+  width: 128px;
+  height: 40px;
+  background-size: 380px;
+  background-position: -196px -1px;
+}
+
+.icon-dtv-asp {
+  width: 215.6px;
+  height: 40px;
+  display: inline-block;
+  background-image: url(https://image.cellphones.com.vn/539x/media/icon/logo_dtv-asp.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.icon-cps-tb {
+  width: 80px;
+  height: 38px;
+  background-position: -6px -398px;
+  background-size: 500px;
+}
+
+.icon-cps,
+.icon-dtv,
+[class*='icon-cps-'] {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(https://cdn.cellphones.com.vn/media/icon/icons_menubar-11.svg);
+  background-repeat: no-repeat;
+}
+
+.shop-box-shadow {
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 10%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+}
+
+.mySwiper2 .swiper-slide {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  border: 1px solid #D1D5DB;
+  background: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.mySwiper .swiper-slide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  float: left;
+  margin-right: 10px;
+  padding: 5px 3px;
+  border-radius: 1rem;
+  background: #ffffff;
+  border: 1px solid #D1D5DB;
+  text-align: center;
+  font-size: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.mySwiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.mySwiper .swiper-wrapper .swiper-slide-thumb-active {
+  border: 2px solid #ff0000;
+}

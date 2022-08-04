@@ -1,0 +1,42 @@
+[
+  {
+    "photo": null,
+    "title": "Samsung Galaxy A51 (8GB/128GB)",
+    "price": "7.790.000",
+    "category": "Điện thoại",
+    "createdDate": "26:06:2020 14:00",
+    "status": "Còn hàng"
+  },
+  {
+    "photo": null,
+    "title": "Samsung Galaxy A52 (8GB/128GB)",
+    "price": "4.790.000",
+    "category": "Điện thoại",
+    "createdDate": "26:06:2020 14:00",
+    "status": "Hết hàng"
+  },
+  {
+    "photo": null,
+    "title": "Samsung Galaxy A53 (8GB/128GB)",
+    "price": "7.790.000",
+    "category": "Điện thoại",
+    "createdDate": "26:06:2020 14:00",
+    "status": "Còn hàng"
+  },
+  {
+    "photo": null,
+    "title": "Samsung Galaxy A54 (8GB/128GB)",
+    "price": "5.790.000",
+    "category": "Điện thoại",
+    "createdDate": "26:06:2020 14:00",
+    "status": "Hết hàng"
+  },
+  {
+    "photo": null,
+    "title": "Samsung Galaxy A55 (8GB/128GB)",
+    "price": "6.790.000",
+    "category": "Điện thoại",
+    "createdDate": "26:06:2020 14:00",
+    "status": "Hết hàng"
+  }
+]

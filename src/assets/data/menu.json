@@ -1,0 +1,459 @@
+{
+  "menu": [
+    {
+      "name": "Điện thoại",
+      "brand": [
+        {
+          "name": "Apple",
+          "brand": [
+            {
+              "name": "Iphone 13 Series"
+            },
+            {
+              "name": "Iphone 12 Series"
+            },
+            {
+              "name": "Iphone 11 Series"
+            },
+            {
+              "name": "Iphone SE"
+            }
+          ]
+        },
+        {
+          "name": "Samsung"
+        },
+        {
+          "name": "Xiaomi"
+        },
+        {
+          "name": "Oppo"
+        },
+        {
+          "name": "Nokia"
+        },
+        {
+          "name": "Realme"
+        },
+        {
+          "name": "Vsmart"
+        },
+        {
+          "name": "Asus"
+        },
+        {
+          "name": "Vivo"
+        },
+        {
+          "name": "OnePlus"
+        },
+        {
+          "name": "Nubia"
+        },
+        {
+          "name": "CAT"
+        },
+        {
+          "name": "Điện thoại phổ thông"
+        },
+        {
+          "name": "Tecno"
+        },
+        {
+          "name": "Hãng khác"
+        }
+      ],
+      "icon": "bg-icon-cps-3",
+      "icon_mobi": "bg-icon-menu-3",
+      "bg_mobi": "bg-grayish-red"
+    },
+    {
+      "name": "Laptop, PC, Màn hình",
+      "brand": [
+        {
+          "name": "Mac",
+          "brand": [
+            {
+              "name": "Macbook Air"
+            },
+            {
+              "name": "Macbook Pro"
+            },
+            {
+              "name": "MacBook mini"
+            },
+            {
+              "name": "iMac"
+            }
+          ]
+        },
+        {
+          "name": "HP"
+        },
+        {
+          "name": "Dell"
+        },
+        {
+          "name": "Lenovo"
+        },
+        {
+          "name": "Microsoft Surface"
+        },
+        {
+          "name": "ASUS"
+        },
+        {
+          "name": "Acer"
+        },
+        {
+          "name": "LG"
+        },
+        {
+          "name": "Huawei"
+        },
+        {
+          "name": "MSI"
+        },
+        {
+          "name": "Laptop Avita"
+        },
+        {
+          "name": "Gigabyte"
+        },
+        {
+          "name": "Fujitsu"
+        },
+        {
+          "name": "Máy tính để bàn"
+        },
+        {
+          "name": "Màn hình"
+        },
+        {
+          "name": "Máy in"
+        },
+        {
+          "name": "Linh kiện Máy tính"
+        }
+      ],
+      "icon": "bg-icon-cps-380",
+      "icon_mobi": "bg-icon-menu-380",
+      "bg_mobi": "bg-pallete-orange"
+    },
+    {
+      "name": "Tablet",
+      "brand": [
+        {
+          "name": "iPad Pro"
+        },
+        {
+          "name": "iPad 10.2"
+        },
+        {
+          "name": "iPad Air"
+        },
+        {
+          "name": "iPad Mini"
+        },
+        {
+          "name": "Samsung"
+        },
+        {
+          "name": "Lenovo"
+        },
+        {
+          "name": "Xiaomi"
+        },
+        {
+          "name": "Kindle"
+        },
+        {
+          "name": "Máy đọc sách"
+        },
+        {
+          "name": "Alcatel"
+        }
+      ],
+      "icon": "bg-icon-cps-4",
+      "icon_mobi": "bg-icon-menu-4",
+      "bg_mobi": "bg-soft-yellow"
+    },
+    {
+      "name": "Âm thanh",
+      "brand": [
+        {
+          "name": "Loa",
+          "brand": [
+            {
+              "name": "Loa Bluetooth"
+            },
+            {
+              "name": "Loa Karaoke"
+            },
+            {
+              "name": "Loa Tivi | Soundbar"
+            }
+          ]
+        },
+        {
+          "name": "Tai nghe",
+          "brand": [
+            {
+              "name": "Tai nghe Bluetooth"
+            },
+            {
+              "name": "Tai nghe nhét tai"
+            },
+            {
+              "name": "Tai nghe chụp tai"
+            }
+          ]
+        },
+        {
+          "name": "Phụ kiện"
+        },
+        {
+          "name": "Phòng thu âm"
+        }
+      ],
+      "icon": "bg-icon-cps-220",
+      "icon_mobi": "bg-icon-menu-220",
+      "bg_mobi": "bg-grayish-green"
+    },
+    {
+      "name": "Đồng hồ",
+      "brand": [
+        {
+          "name": "Apple Watch",
+          "brand": [
+            {
+              "name": "Series 6"
+            },
+            {
+              "name": "SE"
+            },
+            {
+              "name": "Series 7"
+            }
+          ]
+        },
+        {
+          "name": "Samsung"
+        },
+        {
+          "name": "Garmin"
+        },
+        {
+          "name": "Xiaomi"
+        },
+        {
+          "name": "Amazfit"
+        },
+        {
+          "name": "Huawei"
+        },
+        {
+          "name": "OPPO"
+        },
+        {
+          "name": "Hãng khác"
+        },
+        {
+          "name": "Vòng tay thông minh"
+        },
+        {
+          "name": "Coros"
+        }
+      ],
+      "icon": "bg-icon-cps-610",
+      "icon_mobi": "bg-icon-menu-610",
+      "bg_mobi": "bg-grayish-cyan-lime-green"
+    },
+    {
+      "name": "Nhà thông minh",
+      "brand": [
+        {
+          "name": "Máy hút bụi"
+        },
+        {
+          "name": "Khóa thông minh"
+        },
+        {
+          "name": "Máy lọc không khí"
+        },
+        {
+          "name": "Đèn thông minh"
+        },
+        {
+          "name": "TV Box"
+        },
+        {
+          "name": "Cân sức khỏe"
+        },
+        {
+          "name": "Thiết bị y tế"
+        },
+        {
+          "name": "Máy chạy bộ"
+        },
+        {
+          "name": "Cảm biến thông minh"
+        },
+        {
+          "name": "Wifi Mesh"
+        },
+        {
+          "name": "Modem Router"
+        },
+        {
+          "name": "Camera An Ninh"
+        }
+      ],
+      "icon": "bg-icon-cps-845",
+      "icon_mobi": "bg-icon-menu-845",
+      "bg_mobi": "bg-scandal"
+    },
+    {
+      "name": "Phụ kiện",
+      "brand": [
+        {
+          "name": "Phụ Kiện Apple"
+        },
+        {
+          "name": "Dán điện thoại | Laptop"
+        },
+        {
+          "name": "Ốp lưng | Bao da | Ốp AirPods"
+        },
+        {
+          "name": "Dây đeo đồng hồ"
+        },
+        {
+          "name": "Balo | Túi xách"
+        },
+        {
+          "name": "Sạc - Cáp"
+        },
+        {
+          "name": "Pin dự phòng"
+        },
+        {
+          "name": "Camera",
+          "brand": [
+            {
+              "name": "Camera hành trình",
+              "brand": [
+                {
+                  "name": "Gopro"
+                },
+                {
+                  "name": "DJI"
+                },
+                {
+                  "name": "Vietmap"
+                },
+                {
+                  "name": "Insta360"
+                }
+              ]
+            },
+            {
+              "name": "Camera An ninh"
+            },
+            {
+              "name": "Gimbal"
+            },
+            {
+              "name": "Phụ kiện quay phim"
+            }
+          ]
+        },
+        {
+          "name": "Chuột | Bàn phím"
+        },
+        {
+          "name": "Phụ kiện tiện ích"
+        },
+        {
+          "name": "Thẻ nhớ, USB"
+        },
+        {
+          "name": "Phụ kiện máy tính - laptop"
+        },
+        {
+          "name": "Phụ kiện cho bé"
+        }
+      ],
+      "icon": "bg-icon-cps-30",
+      "icon_mobi": "bg-icon-menu-30",
+      "bg_mobi": "bg-pattens-blue"
+    },
+    {
+      "name": "Thu cũ",
+      "brand": [
+        {
+          "name": "CellphoneS"
+        },
+        {
+          "name": "SKTel"
+        },
+        {
+          "name": "Compasia"
+        }
+      ],
+      "icon": "bg-icon-cps-tcdm",
+      "icon_mobi": "bg-icon-menu-tcdm",
+      "bg_mobi": "bg-zumthor"
+    },
+    {
+      "name": "Hàng cũ",
+      "brand": [
+        {
+          "name": "Điện thoại"
+        },
+        {
+          "name": "Máy tính bảng"
+        },
+        {
+          "name": "Mac"
+        },
+        {
+          "name": "Laptop"
+        },
+        {
+          "name": "Loa - Tai nghe"
+        },
+        {
+          "name": "Đồng hồ thông minh"
+        },
+        {
+          "name": "Nhà thông minh"
+        },
+        {
+          "name": "Phụ kiện"
+        }
+      ],
+      "icon": "bg-icon-cps-29",
+      "icon_mobi": "bg-icon-menu-29",
+      "bg_mobi": "bg-blue-chalk"
+    },
+    {
+      "name": "Sim Thẻ",
+      "icon": "bg-icon-cps-123",
+      "icon_mobi": "bg-icon-menu-123",
+      "bg_mobi": "bg-white-pointer"
+    },
+    {
+      "name": "Tin Công Nghệ",
+      "icon": "bg-icon-cps-tech",
+      "icon_mobi": "bg-icon-menu-tech-3",
+      "bg_mobi": "bg-wisp-pink"
+    },
+    {
+      "name": "Khuyến mãi",
+      "icon": "bg-icon-cps-promotion",
+      "icon_mobi": "bg-icon-menu-promotion",
+      "bg_mobi": "bg-pippin"
+    }
+  ]
+}

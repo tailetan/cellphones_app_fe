@@ -1,0 +1,115 @@
+
+{
+  "computer": [
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/a/p/apple_studio_display_2022_co_chan_de_1.jpg",
+      "name": "Apple Studio Display 27 5K Chân đế cố định 2022 chính hãng",
+      "preOrder": {
+        "status": true,
+        "content": "SẮP VỀ HÀNG"
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "43.990.000",
+        "salePrice": "",
+        "percentageSale": "",
+        "saleStatus": false
+      },
+      "promotion": {
+        "status": false,
+        "voucher": "",
+        "content": ""
+      },
+      "averageRating": 0,
+      "comment": 0
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/m/a/man-hinh-xiaomi-monitor-1c-23-8-inch-bhr4510gl-thumb.jpg",
+      "name": "Màn hình Xiaomi Monitor 1C 23.8 inch BHR4510gl",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "3.290.000",
+        "salePrice": "3.490.000",
+        "percentageSale": "5",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Ưu đãi giảm 50,000 khi mua giá treo màn hình"
+      },
+      "averageRating": 5,
+      "comment": 2
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/g/i/gia-treo-man-hinh-may-tinh-north-bayou-nb-f80-1.jpg",
+      "name": "Giá treo màn hình máy tính North Bayou NB-F80",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "450.000",
+        "salePrice": "650.000",
+        "percentageSale": "30",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Ưu đãi giảm 50,000 khi mua giá treo màn hình"
+      },
+      "averageRating": 5,
+      "comment": 2
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/m/a/man-hinh-samsung-27-inch-ls27am500nexxv-1.jpg",
+      "name": "Màn hình thông minh Samsung 27 inch LS27AM500NEXXV",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "4.990.000",
+        "salePrice": "7.339.000",
+        "percentageSale": "32",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Ưu đãi giảm 50,000 khi mua giá treo màn hình"
+      },
+      "averageRating": 5,
+      "comment": 2
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/m/a/man-hinh-samsung-32-inch-ls32am700nexxv.jpg",
+      "name": "Màn hình thông minh Samsung 32 inch LS32AM700NEXXV",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "8.790.000",
+        "salePrice": "12.190.000",
+        "percentageSale": "27",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Ưu đãi giảm 50,000 khi mua giá treo màn hình"
+      },
+      "averageRating": 5,
+      "comment": 1
+    }
+  ]
+}

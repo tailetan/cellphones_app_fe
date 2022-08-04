@@ -1,0 +1,28 @@
+{
+  "computer": [
+    {
+      "label": "Máy tính bàn"
+    },
+    {
+      "label": "Dell"
+    },
+    {
+      "label": "HP"
+    },
+    {
+      "label": "ASUS"
+    },
+    {
+      "label": "LG"
+    },
+    {
+      "label": "Samsung"
+    },
+    {
+      "label": "Đồng bộ"
+    },
+    {
+      "label": "Xem tất cả"
+    }
+  ]
+}

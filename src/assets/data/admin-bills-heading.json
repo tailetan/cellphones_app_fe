@@ -1,0 +1,32 @@
+[
+  {
+    "id": "no",
+    "sortable": false,
+    "label": "#"
+  },
+  {
+    "id": "title",
+    "sortable": false,
+    "label": "Tên hóa đơn"
+  },
+  {
+    "id": "price",
+    "sortable": false,
+    "label": "Tổng hóa đơn"
+  },
+  {
+    "id": "createdDate",
+    "sortable": false,
+    "label": "Ngày tạo"
+  },
+  {
+    "id": "status",
+    "sortable": false,
+    "label": "Trạng thái"
+  },
+  {
+    "id": "action",
+    "sortable": false,
+    "label": "Tác vụ"
+  }
+]

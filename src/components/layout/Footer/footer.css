@@ -1,0 +1,22 @@
+footer {
+  width: 100%;
+  float: left;
+  box-shadow: rgb(60 64 67 / 10%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+  position: relative
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer .footer__box-information {
+  min-height: 100px;
+  background: #F8F8F8;
+}
+
+a.dmca-badge img {
+  width: unset !important;
+  height: 20px;
+  margin-left: 5px;
+  vertical-align: middle;
+}

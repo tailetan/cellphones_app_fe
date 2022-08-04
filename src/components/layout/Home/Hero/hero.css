@@ -1,0 +1,67 @@
+.hero {
+  width: 100%;
+  float: left;
+  margin: 0.938rem 0;
+}
+
+[class*=hero__box-]:not(:last-child) {
+  margin-right: 15px;
+}
+
+.hero .hero__box-left {
+  width: 205px;
+  float: left;
+}
+
+.hero .hero__box-center {
+  width: calc(100% - (205px + 265px + 30px));
+  float: left;
+  overflow: hidden;
+  box-shadow: rgb(60 64 67 / 10%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+  border-radius: 10px;
+}
+
+.hero .hero__box-right {
+  width: 265px;
+  float: left;
+}
+
+.hero .hero__box-left .box-list-menu {
+  min-height: 376px;
+  background: #ffffff;
+  position: relative;
+  box-shadow: rgb(60 64 67 / 10%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+  border-radius: 10px;
+}
+
+.hero .hero__box-left .box-list-menu .box-list-menu-child,
+.hero .hero__box-left .box-list-menu .box-list-menu-child-2,
+.hero .hero__box-left .box-list-menu .box-list-menu-child-3 {
+  width: 220px;
+  min-height: 375.56px;
+  visibility: hidden;
+  background: #ffffff;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+  position: absolute;
+  top: 0;
+  left: unset;
+  right: -218px;
+  z-index: 100;
+  opacity: 0;
+  border-radius: 10px;
+}
+
+.hero .hero__box-left .box-list-menu .menu .menu-layout .ml-content:hover .box-list-menu-child {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hero .hero__box-left .box-list-menu .menu .menu-layout .ml-content.ml-content-child:hover .box-list-menu-child-2 {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hero .hero__box-left .box-list-menu .menu .menu-layout .ml-content.ml-content-child-2:hover .box-list-menu-child-3 {
+  visibility: visible;
+  opacity: 1;
+}

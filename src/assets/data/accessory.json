@@ -1,0 +1,115 @@
+{
+  "accessory": [
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/a/i/airpods-2_6.jpg",
+      "name": "Tai nghe Bluetooth Apple AirPods 2 VN/A",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "2.790.000",
+        "salePrice": "3.990.000",
+        "percentageSale": "",
+        "saleStatus": false
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Nhận gói 6 tháng Apple Music miễn phí"
+      },
+      "averageRating": 0,
+      "comment": 44
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/b/u/buds-live_1.jpg",
+      "name": "Tai nghe Bluetooth Samsung Galaxy Buds Live",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "1.490.000",
+        "salePrice": "4.490.000 ₫",
+        "percentageSale": "6",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": false,
+        "voucher": "",
+        "content": ""
+      },
+      "averageRating": 4,
+      "comment": 17
+    },
+    {
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/p/i/pin-du-phong-1000-mah-tich-hop-sac-khong-day-5w-energizer-qe10007-cate.jpg",
+      "name": "Pin dự phòng 10000mAh tích hợp sạc không dây 5W Energizer QE10007",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "500.000",
+        "salePrice": "800.000",
+        "percentageSale": "10",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": false,
+        "voucher": "",
+        "content": ""
+      },
+      "averageRating": 5,
+      "comment": 11
+    },
+    {
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/c/h/chuot-khong-day-logitech-m590.jpg",
+      "name": "Chuột không dây Logitech M590",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "595.000",
+        "salePrice": "800.000",
+        "percentageSale": "26",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": false,
+        "voucher": "",
+        "content": ""
+      },
+      "averageRating": 5,
+      "comment": 15
+    },
+    {
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/b/a/ban-phim-bluetooth-logitech-k380_1.jpg",
+      "name": "Bàn phím Bluetooth Logitech K380",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "620.000",
+        "salePrice": "750.000",
+        "percentageSale": "7",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": false,
+        "voucher": "",
+        "content": ""
+      },
+      "averageRating": 5,
+      "comment": 21
+    }
+   
+  ]
+}

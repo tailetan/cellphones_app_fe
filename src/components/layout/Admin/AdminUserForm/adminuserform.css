@@ -1,0 +1,68 @@
+.admin-user-form .css-1q9zyls-MuiInputBase-root-MuiFilledInput-root,
+.admin-user-form .css-49s959-MuiInputBase-root-MuiFilledInput-root {
+  background-color: #ffffff;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.admin-user-form .css-1q9zyls-MuiInputBase-root-MuiFilledInput-root::before,
+.admin-user-form .css-1q9zyls-MuiInputBase-root-MuiFilledInput-root::after,
+.admin-user-form .css-49s959-MuiInputBase-root-MuiFilledInput-root::before,
+.admin-user-form .css-49s959-MuiInputBase-root-MuiFilledInput-root::after {
+  content: none;
+}
+
+.admin-user-form .css-10botns-MuiInputBase-input-MuiFilledInput-input,
+.admin-user-form .css-1gctnaj-MuiInputBase-input-MuiFilledInput-input {
+  padding-top: 12px;
+}
+
+.admin-product-form
+  .MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-root.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl.MuiInputBase-adornedEnd.MuiAutocomplete-inputRoot.css-49s959-MuiInputBase-root-MuiFilledInput-root {
+  padding-top: 5px;
+}
+
+.admin-user-form .css-1q9zyls-MuiInputBase-root-MuiFilledInput-root.Mui-disabled:hover {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.admin-user-form .css-1q9zyls-MuiInputBase-root-MuiFilledInput-root:hover,
+.admin-user-form .css-49s959-MuiInputBase-root-MuiFilledInput-root:hover,
+.admin-user-form .css-49s959-MuiInputBase-root-MuiFilledInput-root.Mui-focused,
+.admin-user-form .css-1q9zyls-MuiInputBase-root-MuiFilledInput-root.Mui-focused {
+  background-color: #ffffff;
+}
+
+.admin-user-form .css-319lph-ValueContainer {
+  padding: 10px 8px !important;
+}
+
+.css-j5h6pi-MuiPopper-root {
+  z-index: 4000 !important;
+}
+
+.css-6j8wv5-Input,
+.css-1pndypt-Input {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.css-1s2u09g-control,
+select:focus,
+.css-1pahdxg-control,
+.css-1pahdxg-control:hover {
+  border: none !important;
+}
+
+.css-1pahdxg-control {
+  box-shadow: none !important;
+}
+
+.css-9gakcf-option,
+.css-1n7v3ny-option {
+  background-color: rgba(255, 87, 106, 0.18) !important;
+  color: #d70018 !important;
+}
+
+.css-19e7btl-MuiButtonBase-root-MuiButton-root.Mui-disabled {
+  color: #ffffff !important;
+}

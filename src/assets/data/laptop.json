@@ -1,0 +1,224 @@
+{
+  "laptop": [
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/1/8/18_2_29.jpg",
+      "name": "Laptop Asus Vivobook 13 Slate Oled T3300KA",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "17.790.000",
+        "salePrice": "",
+        "percentageSale": "",
+        "saleStatus": false
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Nhập CPS300 giảm 300.000đ cho các sản phẩm Laptop khi thanh toán qua VNPAY tại cửa hàng"
+      },
+      "averageRating": 0,
+      "comment": 0
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/m/a/mac_air.jpg",
+      "name": "Apple MacBook Air M1 256GB 2020 I Chính hãng Apple Việt Nam",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "23.850.000",
+        "salePrice": "28.990.000",
+        "percentageSale": "17",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Mua Office Home & Student 2021 kèm Macbook chỉ còn 2,090,000"
+      },
+      "averageRating": 5,
+      "comment": 13
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/2/4/24_51.jpg",
+      "name": "Laptop Dell Insprion 14 5406-3661SLV Nhập khẩu chính hãng",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "13.990.000",
+        "salePrice": "15.990.000",
+        "percentageSale": "12",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Nhập CPS300 giảm 300.000đ cho các sản phẩm Laptop khi thanh toán qua VNPAY tại cửa hàng"
+      },
+      "averageRating": 0,
+      "comment": 0
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/2/_/2_64_37.jpg",
+      "name": "Laptop Asus Gaming Rog Strix G15 G513IH HN015W",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "21.490.000",
+        "salePrice": "23.990.000",
+        "percentageSale": "10",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Thu cũ lên đời - Trợ giá 500.000đ"
+      },
+      "averageRating": 0,
+      "comment": 0
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/m/b/mbp-silver-select-202011-spa.jpg",
+      "name": "Apple MacBook Pro 13 Touch Bar M1 256GB 2020 I Chính hãng Apple Việt Nam",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "30.800.000",
+        "salePrice": "35.990.000",
+        "percentageSale": "14",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Mua Office Home & Student 2021 kèm Macbook chỉ còn 2,090,000"
+      },
+      "averageRating": 5,
+      "comment": 1
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/_/0/_0000_71cghoz8ats._ac_sl1500.jpg",
+      "name": "Laptop Lenovo Ideapad 3 15ALC6",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "16.190.000",
+        "salePrice": "19.990.000",
+        "percentageSale": "19",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Thu cũ lên đời - Trợ giá 500.000đ"
+      },
+      "averageRating": 0,
+      "comment": 0
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/l/a/laptop-msi-modern-14-b11mou-1030vn-1.jpg",
+      "name": "Laptop MSI Modern 14 B11MOU 1030VN",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "12.990.000",
+        "salePrice": "14.990.000",
+        "percentageSale": "13",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Thu cũ lên đời - Trợ giá 500.000đ"
+      },
+      "averageRating": 5,
+      "comment": 1
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/i/m/imac_21_inch_2020_mac24h_xuo7-a6_1.png",
+      "name": "Apple iMac 27 5K 2020 i5 3.1 8GB 256GB Radeon 5300 Chính Hãng (MXWT2)",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "33.990.000",
+        "salePrice": "40.990.000",
+        "percentageSale": "32",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Mua Office Home & Student 2021 kèm Macbook chỉ còn 2,090,000"
+      },
+      "averageRating": 0,
+      "comment": 0
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/l/a/laptop-huawei-matebook-14-3.jpg",
+      "name": "Laptop Huawei Matebook 14",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "20.990.000",
+        "salePrice": "21.990.000",
+        "percentageSale": "4",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Tặng Balo Huawei Packpack Xám và 1 km khác"
+      },
+      "averageRating": 5,
+      "comment": 1
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/m/a/macbook-pro-2021-007_1.jpg",
+      "name": "Macbook Pro 14 inch 2021 | Chính hãng Apple Việt Nam",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "49.990.000",
+        "salePrice": "52.990.000",
+        "percentageSale": "5",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Mua Office Home & Student 2021 kèm Macbook chỉ còn 2,090,000"
+      },
+      "averageRating": 5,
+      "comment": 3
+    }
+  ]
+}

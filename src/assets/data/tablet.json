@@ -1,0 +1,115 @@
+{
+  "tablet": [
+    {
+      "image": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/thumbnail/220x175/9df78eab33525d08d6e5fb8d27136e95/2/_/2_39.png",
+      "name": "iPad Air 5 (2022) 64GB I Chính hãng Apple Việt Nam",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "15.990.000",
+        "salePrice": "",
+        "percentageSale": "",
+        "saleStatus": false
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Ưu đãi đối tác giảm đến 1 triệu khi thanh toán qua ví Moca, VNPAY và 1 km khác"
+      },
+      "averageRating": 0,
+      "comment": 0
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/t/a/tab_s8_ultra.jpg",
+      "name": "Samsung Galaxy Tab S8 Ultra",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "28.990.000",
+        "salePrice": "28.990.000",
+        "percentageSale": "6",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Tặng bao da kiêm bàn phím Galaxy Tab S8 Ultra chính hãng"
+      },
+      "averageRating": 5,
+      "comment": 2
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/a/p/apple_ipad_pro_11_2021_m1_wifi_128gb.png",
+      "name": "Apple iPad Pro 11 2021 M1 WiFi 128GB I Chính hãng Apple Việt Nam ",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "19.950.000",
+        "salePrice": "23.990.000",
+        "percentageSale": "16",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Thu cũ lên đời - Trợ giá 1 triệu"
+      },
+      "averageRating": 5,
+      "comment": 11
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/i/p/ipad-10-2-2021-4_2.jpg",
+      "name": "iPad 10.2 2021 WiFi 64GB | Chính hãng Apple Việt Nam",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "9.790.000",
+        "salePrice": "10.990.000",
+        "percentageSale": "10",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Nhập CPS500 - Giảm 500.000đ cho các sản phẩm Apple từ 10 triệu khi thanh toán qua VNPAY tại cửa hàngđ"
+      },
+      "averageRating": 5,
+      "comment": 14
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/i/p/ipad-mini-6.jpg",
+      "name": "Apple iPad mini 6 WiFi 64GB | Chính hãng Apple Việt Nam",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "13.850.000",
+        "salePrice": "14.990.000",
+        "percentageSale": "7",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Nhập CPS500 - Giảm 500.000đ cho các sản phẩm Apple từ 10 triệu khi thanh toán qua VNPAY tại cửa hàng"
+      },
+      "averageRating": 5,
+      "comment": 21
+    }
+   
+  ]
+}

@@ -1,0 +1,107 @@
+.card-product .cp-image a img {
+  height: 160px;
+}
+
+.card-product .cp-sticker-percent {
+  width: 80px;
+  height: 31px;
+  background: url('../../../assets/images/sticker.svg');
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0px;
+  left: -4px;
+}
+
+.card-product .cp-sticker-percent p {
+  margin-top: 0;
+  margin-bottom: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+}
+
+.card-product .cp-name a {
+  font-size: 0.875rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-product .cp-preorder span {
+  font-size: 0.75rem;
+  border: 1px solid #D70018;
+  background: #FEF2F2;
+  text-transform: uppercase;
+  color: #D70018;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+}
+
+.card-product .cp-price span.special-price {
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #D70018;
+}
+
+.card-product .cp-price span.sale-price {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  text-decoration: line-through;
+  color: #707070;
+}
+
+.card-product .cp-promotion {
+  border-radius: 0.5rem;
+  border: 1px solid #E5E7EB;
+  background: #F3F4F6;
+}
+
+.card-product .cp-promotion .cpp-voucher {
+  width: 45px;
+  height: 35px;
+  border-radius: 5px;
+  font-size: 8px;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  float: left;
+}
+
+.card-product .cp-promotion .cpp-voucher span {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+
+.card-product .cp-promotion .cpp-voucher span:first-child {
+  padding: 0.125rem 0 0 0;
+  background: #2e373e;
+}
+
+.card-product .cp-promotion .cpp-voucher span:last-child {
+  background: #D70018;
+}
+
+.card-product .cp-promotion span.cpp-content {
+  min-width: calc(100% - (45px + 5px));
+  float: left;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-transform: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-product .cp-rating .comment {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}

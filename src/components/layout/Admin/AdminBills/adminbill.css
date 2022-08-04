@@ -1,0 +1,71 @@
+.admin-card-bills {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: #ffffff;
+}
+
+.admin-card-bills .css-10botns-MuiInputBase-input-MuiFilledInput-input {
+    padding-top: 9px;
+}
+
+.admin-card-bills .css-6v2jcy-MuiButtonBase-root-MuiChip-root .MuiChip-deleteIcon,
+.admin-card-bills .css-6v2jcy-MuiButtonBase-root-MuiChip-root .MuiChip-deleteIcon:hover {
+    color: #ffffff;
+}
+
+.admin-card-bills .css-1q9zyls-MuiInputBase-root-MuiFilledInput-root {
+    background-color: #ffffff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.admin-card-bills .css-1q9zyls-MuiInputBase-root-MuiFilledInput-root:hover,
+.admin-card-bills .css-1q9zyls-MuiInputBase-root-MuiFilledInput-root.Mui-focused {
+    background-color: #ffffff;
+}
+
+.admin-card-bills .css-1q9zyls-MuiInputBase-root-MuiFilledInput-root::before,
+.admin-card-bills .css-1q9zyls-MuiInputBase-root-MuiFilledInput-root::after {
+    content: none;
+}
+
+.admin-card-bills .acb-header {
+    background-color: #e7e9eb;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.admin-card-bills .acb-header p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.admin-card-bills
+.acb-header
+.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-root.MuiInputBase-colorRed.MuiInputBase-formControl.MuiInputBase-sizeSmall.css-1lxh5pi-MuiInputBase-root-MuiFilledInput-root {
+    background-color: #ffffff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.admin-card-bills
+.acb-header
+.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-root.MuiInputBase-colorRed.MuiInputBase-formControl.MuiInputBase-sizeSmall.css-1lxh5pi-MuiInputBase-root-MuiFilledInput-root::before,
+.admin-card-bills
+.acb-header
+.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-root.MuiInputBase-colorRed.MuiInputBase-formControl.MuiInputBase-sizeSmall.css-1lxh5pi-MuiInputBase-root-MuiFilledInput-root::after {
+    content: none;
+}
+
+.admin-card-bills .acb-body {
+    padding: 12px 20px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.admin-card-bills .MuiChip-root.MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault.MuiChip-filledDefault.css-as3zas-MuiChip-root {
+    border-radius: 4px;
+}

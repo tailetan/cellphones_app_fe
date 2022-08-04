@@ -1,0 +1,224 @@
+{
+  "phone": [
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg",
+      "name": "iPhone SE 2022 | Chính hãng VN/A",
+      "preOrder": {
+        "status": true,
+        "content": "HÀNG ĐẶT TRƯỚC"
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "12.490.000",
+        "salePrice": "12.990.000",
+        "percentageSale": "3",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Ưu đãi đối tác giảm đến 1 triệu khi thanh toán qua ví Moca, VNPAY và 1 km khác"
+      },
+      "averageRating": 0,
+      "comment": 0
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone_13-_pro-5_4.jpg",
+      "name": "iPhone 13 Pro Max 128GB | Chính hãng VN/A",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "29.350.000",
+        "salePrice": "34.990.000",
+        "percentageSale": "16",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Thu cũ lên đời - Trợ giá 1 triệu"
+      },
+      "averageRating": 5,
+      "comment": 24
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone_11_white_4_.png",
+      "name": "iPhone 11 64GB | Chính hãng VN/A",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "11.990.000",
+        "salePrice": "18.000.000",
+        "percentageSale": "33",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "[HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới 1.000.000đ và 1 km khác"
+      },
+      "averageRating": 5,
+      "comment": 64
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/1/1/11-pro-plus-blue.jpg",
+      "name": "Xiaomi Readmi Note 11 Pro Plus 5G",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "9.990.000",
+        "salePrice": "",
+        "percentageSale": "",
+        "saleStatus": false
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "700.000",
+        "content": "Thu cũ lên đời trợ giá 500.000đ và 1 km khác"
+      },
+      "averageRating": 5,
+      "comment": 4
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/8/0/800x800-1-640x640-5_2.png",
+      "name": "Xiaomi Redmi Note 11",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "4.490.000",
+        "salePrice": "4.690.000",
+        "percentageSale": "4",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "540.000",
+        "content": ""
+      },
+      "averageRating": 5,
+      "comment": 5
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/s/m/sm-s908_galaxys22ultra_front_green_211119.jpg",
+      "name": "Samsung Galaxy S22 Ultra (8GB - 128GB)",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "29.190.000",
+        "salePrice": "30.990.000",
+        "percentageSale": "5",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Giảm 50 đồng hồ Samsung Galaxy Watch 4 classic 42mm khi mua kèm S22 series/Z series"
+      },
+      "averageRating": 0,
+      "comment": 0
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/a/s/asus-rog-phone-5_0002_gsmarena_001_3_1.jpg",
+      "name": "ASUS ROG Phone 5S 16GB 256GB",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "19.990.000",
+        "salePrice": "20.990.000",
+        "percentageSale": "4",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "500.000",
+        "content": "Loa Bluetooth JBL Go 2 và 2 km khác"
+      },
+      "averageRating": 5,
+      "comment": 5
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/y/e/yellow_final_2.jpg",
+      "name": "Samsung Galaxy Note 20 Ultra 5G",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "18.990.000",
+        "salePrice": "32.990.000",
+        "percentageSale": "42",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": false,
+        "voucher": "",
+        "content": ""
+      },
+      "averageRating": 5,
+      "comment": 28
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/s/m/sm-a536_galaxy_a53_5g_awesome_peach004.jpg",
+      "name": "Samsung Galaxy A53 (5G)",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "9.290.000",
+        "salePrice": "9.990.000",
+        "percentageSale": "7",
+        "saleStatus": true
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "",
+        "content": "Đặc quyền hội viên với mức phí 300k (Tặng Samsung care+ và hỗ trợ nhập lại sản phẩm lên tới 65 sau 9 -12 tháng)"
+      },
+      "averageRating": 0,
+      "comment": 0
+    },
+    {
+      "image": "https://image.cellphones.com.vn/220x/media/catalog/product/4/0/40_1_23.jpg",
+      "name": "Tecno Spark 8C",
+      "preOrder": {
+        "status": false,
+        "content": ""
+      },
+      "saleInfo": {
+        "unit": "VND",
+        "price": "2.990.000",
+        "salePrice": "",
+        "percentageSale": "",
+        "saleStatus": false
+      },
+      "promotion": {
+        "status": true,
+        "voucher": "540.000",
+        "content": ""
+      },
+      "averageRating": 0,
+      "comment": 0
+    }
+  ]
+}

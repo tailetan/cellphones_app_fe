@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Apple",
+    "value": "Apple"
+  },
+  {
+    "name": "Samsung",
+    "value": "Samsung"
+  },
+  {
+    "name": "Xiaomi",
+    "value": "Xiaomi"
+  },
+  {
+    "name": "Oppo",
+    "value": "Oppo"
+  },
+  {
+    "name": "Realme",
+    "value": "Realme"
+  },
+  {
+    "name": "HP",
+    "value": "HP"
+  },
+  {
+    "name": "Dell",
+    "value": "Dell"
+  },
+  {
+    "name": "Lenovo",
+    "value": "Lenovo"
+  },
+  {
+    "name": "Asus",
+    "value": "Asus"
+  },
+  {
+    "name": "Acer",
+    "value": "Acer"
+  }
+]

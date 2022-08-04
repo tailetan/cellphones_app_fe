@@ -1,0 +1,37 @@
+{
+  "laptop": [
+    {
+      "label": "Thinkpad"
+    },
+    {
+      "label": "Mac Studio"
+    },
+    {
+      "label": "Studio Display"
+    },
+    {
+      "label": "Mac"
+    },
+    {
+      "label": "ASUS"
+    },
+    {
+      "label": "HP"
+    },
+    {
+      "label": "Microsoft Surface"
+    },
+    {
+      "label": "Acer"
+    },
+    {
+      "label": "MSI"
+    },
+    {
+      "label": "Dell"
+    },
+    {
+      "label": "Xem tất cả"
+    }
+  ]
+}

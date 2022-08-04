@@ -1,0 +1,33 @@
+.menu .menu-layout {
+  margin: 0;
+}
+
+.menu .menu-layout .ml-content {
+  padding: 0 0.625rem;
+  cursor: pointer; 
+  min-height: 31.3px;
+  background: 0 0;
+}
+
+.menu .menu-layout .ml-content:hover {
+  background: #F3F4F6;
+}
+
+.menu .menu-layout .ml-content:first-child:hover {
+  border-radius: 10px 10px 0 0;
+}
+
+.menu .menu-layout .ml-content:last-child:hover {
+  border-radius: 0 0 10px 10px;
+}
+
+.menu .menu-layout .ml-content .mlc-icon-left {
+  width: 25px;
+  height: 25px;
+  margin-right: 0.313rem;
+}
+
+.menu .menu-layout .ml-content .mlc-name {
+  overflow: hidden;
+  font-size: 0.75rem;
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "no",
+    "sortable": false,
+    "label": "#"
+  },
+  {
+    "id": "full_name",
+    "sortable": false,
+    "label": "Họ tên"
+  },
+  {
+    "id": "date_of_birth",
+    "sortable": false,
+    "label": "Ngày sinh"
+  },
+  {
+    "id": "gender",
+    "sortable": false,
+    "label": "Giới tính"
+  },
+  {
+    "id": "is_admin",
+    "sortable": false,
+    "label": "Role"
+  },
+  {
+    "id": "email",
+    "sortable": false,
+    "label": "Email"
+  },
+  {
+    "id": "action",
+    "sortable": false,
+    "label": "Tác vụ"
+  }
+]

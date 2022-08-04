@@ -1,0 +1,54 @@
+.swiper-container {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.main-thumbnail .swiper-slide {
+  height: 304px;
+  overflow: hidden;
+  background: #f8f8f8;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-thumbs {
+  height: 72px;
+  background: #ffffff;
+  position: relative;
+}
+
+.gallery-thumbs .swiper-wrapper {
+  height: 72px;
+}
+
+.gallery-thumbs .swiper-slide {
+  width: 140px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  color: #343a40;
+  overflow: hidden;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.gallery-thumbs .swiper-slide.active {
+  border-bottom: 2px solid #d70018!important;
+  font-weight: 700;
+  color: #343a40;
+}

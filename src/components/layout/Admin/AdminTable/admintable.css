@@ -1,0 +1,16 @@
+.admin-card-product .css-1r6ehke-MuiToolbar-root,
+.admin-card-product .css-1enotpu-MuiTableRow-root.Mui-selected:nth-child(even) {
+  background-color: rgba(210, 25, 59, 0.08);
+}
+
+.admin-card-product .css-1enotpu-MuiTableRow-root:nth-child(odd):hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.admin-card-product .css-4ux7iu-MuiTableCell-root {
+  border-bottom: none;
+}
+
+.admin-card-product .css-1u2w381-MuiModal-root-MuiDrawer-root {
+  z-index: 1201;
+}

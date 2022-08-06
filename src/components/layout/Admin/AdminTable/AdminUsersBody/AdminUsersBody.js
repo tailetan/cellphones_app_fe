@@ -47,13 +47,16 @@ function AdminUsersBody(props) {
   });
 
   const editDialog = async (id) => {
-    const result = await axios.get(`/users/${id}`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-      },
-    });
+    const result = await axios.get(
+      `https://d731-42-115-169-248.ap.ngrok.io/api/users/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      }
+    );
     setDetailUser(result.data);
     setModalShow(true);
   };

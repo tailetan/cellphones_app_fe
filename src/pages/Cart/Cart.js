@@ -130,13 +130,17 @@ function Cart() {
         orderAmount: orderAmountTotal(),
         cart: cartSend,
       };
-      const result = await axios.post("/orders", body, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("user_login_token")}`,
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-        },
-      });
+      const result = await axios.post(
+        "https://d731-42-115-169-248.ap.ngrok.io/api/orders",
+        body,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("user_login_token")}`,
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+          },
+        }
+      );
       if (result.status === 200) {
         Toast.fire({
           icon: "success",

@@ -72,24 +72,30 @@ function Details() {
   }, []);
 
   const handleDetails = async (id) => {
-    const result = await axios.get(`/products/${id}`, {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-      },
-    });
+    const result = await axios.get(
+      `https://d731-42-115-169-248.ap.ngrok.io/api/products/${id}`,
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      }
+    );
     if (result.data.length > 0) {
       setDetails(result.data[0]);
     }
   };
 
   const handleReview = async (id) => {
-    const result = await axios.get(`/product/list-review/${id}`, {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-      },
-    });
+    const result = await axios.get(
+      `https://d731-42-115-169-248.ap.ngrok.io/api/product/list-review/${id}`,
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      }
+    );
     setReviews(result.data);
   };
 

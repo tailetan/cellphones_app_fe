@@ -10,7 +10,7 @@ export const getAllProducts = async ({
   date,
 } = {}) => {
   const queryStringArray = [];
-  let url = "/products";
+  let url = "https://d731-42-115-169-248.ap.ngrok.io/api/products";
   let data = {};
 
   if (paginate) {
@@ -77,7 +77,11 @@ export const createProduct = async (body) => {
   };
 
   await axios
-    .post("/product/create", body, config)
+    .post(
+      "https://d731-42-115-169-248.ap.ngrok.io/api/product/create",
+      body,
+      config
+    )
     .then((result) => {
       data = { ...result.data };
     })
@@ -100,7 +104,10 @@ export const deleteProduct = async (id) => {
   };
 
   await axios
-    .delete(`/product/delete/${id}`, config)
+    .delete(
+      `https://d731-42-115-169-248.ap.ngrok.io/api/product/delete/${id}`,
+      config
+    )
     .then((result) => {
       data = { ...result.data };
     })
@@ -123,7 +130,7 @@ export const getProductById = async (id) => {
   };
 
   await axios
-    .get(`/products/${id}`, config)
+    .get(`https://d731-42-115-169-248.ap.ngrok.io/api/products/${id}`, config)
     .then((result) => {
       data = { ...result.data };
     })
@@ -146,7 +153,11 @@ export const updateProduct = async (id, body) => {
   };
 
   await axios
-    .put(`/product/update/${id}`, body, config)
+    .put(
+      `https://d731-42-115-169-248.ap.ngrok.io/api/product/update/${id}`,
+      body,
+      config
+    )
     .then((result) => {
       data = { ...result.data };
     })

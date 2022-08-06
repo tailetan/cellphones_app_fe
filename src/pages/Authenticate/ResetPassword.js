@@ -51,12 +51,16 @@ function ResetPassword() {
       temp_data.password_confirmation = data.password;
       temp_data.token = token;
 
-      await axios.post("/reset-password", temp_data, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-        },
-      });
+      await axios.post(
+        "https://d731-42-115-169-248.ap.ngrok.io/api/reset-password",
+        temp_data,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+          },
+        }
+      );
       Toast.fire({
         icon: "success",
         title: "Cài đặt mật khẩu thành công!",

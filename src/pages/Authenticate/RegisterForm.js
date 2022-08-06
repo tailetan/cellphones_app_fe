@@ -60,12 +60,17 @@ function RegisterForm({ changeToLoginForm }) {
       if (date_of_birth !== "") {
         const temp_data = { ...data };
         temp_data.date_of_birth = date_of_birth;
-        const result = await axios.post("/register", temp_data, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-          },
-        });
+        const result = await axios.post(
+          "https://d731-42-115-169-248.ap.ngrok.io/api/register",
+          temp_data,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Methods":
+                "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+            },
+          }
+        );
         if (result.status === 201) {
           changeToLoginForm();
           Toast.fire({

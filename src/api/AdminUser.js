@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getAllUsers = async ({ paginate, page, sort, search } = {}) => {
   const queryStringArray = [];
-  let url = "/users";
+  let url = "https://d731-42-115-169-248.ap.ngrok.io/api/users";
   let data = {};
 
   if (paginate) {
@@ -58,7 +58,10 @@ export const deleteUser = async (id) => {
   };
 
   await axios
-    .delete(`/user/delete/${id}`, config)
+    .delete(
+      `https://d731-42-115-169-248.ap.ngrok.io/api/user/delete/${id}`,
+      config
+    )
     .then((result) => {
       data = { ...result.data };
     })

@@ -12,7 +12,8 @@ class Laptop extends React.Component {
   };
 
   componentDidMount() {
-    const url = "/getRecommendedLaptops";
+    const url =
+      "https://d731-42-115-169-248.ap.ngrok.io/api/getRecommendedLaptops";
     axios
       .get(url, {
         headers: {

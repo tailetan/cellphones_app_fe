@@ -12,10 +12,17 @@ class Accessory extends React.Component {
   };
 
   componentDidMount() {
-    const url = `/api/getRecommendedAccessories`;
-    axios.get(url).then((result) => {
-      this.setState({ accessory: result.data });
-    });
+    const url = `https://d731-42-115-169-248.ap.ngrok.io/api/getRecommendedAccessories`;
+    axios
+      .get(url, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      })
+      .then((result) => {
+        this.setState({ accessory: result.data });
+      });
   }
 
   render() {

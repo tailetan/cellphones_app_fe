@@ -1,6 +1,6 @@
-import './footer.css';
+import "./footer.css";
 
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
 
 function Footer() {
   return (
@@ -74,12 +74,14 @@ function Footer() {
                   &nbsp; (8h00 - 22h00)
                 </p>
                 <p className="font-12">
-                  Gọi khiếu nại:&nbsp; <a className="font-weight-bold">0798881049</a>&nbsp;(8h00 -
+                  Gọi khiếu nại:&nbsp;{" "}
+                  <a className="font-weight-bold">0798881049</a>&nbsp;(8h00 -
                   21h30)
                 </p>
                 <p className="font-12">
                   Gọi bảo hành:&nbsp;
-                  <a className="font-weight-bold">0798881049</a>&nbsp;(8h00 - 21h00)
+                  <a className="font-weight-bold">0798881049</a>&nbsp;(8h00 -
+                  21h00)
                 </p>
               </li>
               <li>
@@ -100,7 +102,9 @@ function Footer() {
           <Grid item xs={3} sm={3} md={3}>
             <ul>
               <li>
-                <p className="text-red font-12 font-weight-bold">Mua hàng và thanh toán Online</p>
+                <p className="text-red font-12 font-weight-bold">
+                  Mua hàng và thanh toán Online
+                </p>
               </li>
               <li>
                 <a className="font-12">Mua hàng trả góp Online</a>
@@ -156,7 +160,10 @@ function Footer() {
         <div className="container">
           <Grid container spacing={2} className="m-t-4">
             <Grid item md={12}>
-              <p style={{ float: 'left', width: '30%', textAlign: 'justify' }} className="font-10">
+              <p
+                style={{ float: "left", width: "30%", textAlign: "justify" }}
+                className="font-10"
+              >
                 <a>Điện thoại giá rẻ</a>
                 &nbsp;-&nbsp;
                 <a>Máy tính bảng giá rẻ</a>
@@ -176,8 +183,14 @@ function Footer() {
                 <a>Điện thoại iPhone 6</a>
               </p>
               <p
-                style={{ float: 'left', width: '30%', textAlign: 'justify', paddingLeft: '2%' }}
-                className="font-10">
+                style={{
+                  float: "left",
+                  width: "30%",
+                  textAlign: "justify",
+                  paddingLeft: "2%",
+                }}
+                className="font-10"
+              >
                 <a>Điện thoại iPhone</a>
                 &nbsp;-&nbsp;
                 <a>Điện thoại Samsung</a>
@@ -195,8 +208,14 @@ function Footer() {
                 <a>Xiaomi Redmi Note 11 Pro Plus</a>
               </p>
               <p
-                style={{ float: 'left', width: '30%', textAlign: 'justify', paddingLeft: '2%' }}
-                className="font-10">
+                style={{
+                  float: "left",
+                  width: "30%",
+                  textAlign: "justify",
+                  paddingLeft: "2%",
+                }}
+                className="font-10"
+              >
                 <a>Laptop</a>
                 <strong>&nbsp;</strong>-&nbsp;
                 <a>Laptop HP</a>&nbsp;- <a>Laptop Dell</a>&nbsp;-&nbsp;
@@ -218,9 +237,10 @@ function Footer() {
             </Grid>
             <Grid item md={12}>
               <p className="m-b-1 font-10 line-height-2 text-black-50 m-x-6">
-                Công ty TNHH Thương mại và dịch vụ kỹ thuật DIỆU PHÚC - GPĐKKD: 0316172372 do sở KH
-                &amp; ĐT TP. HCM cấp ngày 02/03/2020. Địa chỉ: 350-352 Võ Văn Kiệt, Phường Cô Giang,
-                Quận 1, Thành phố Hồ Chí Minh, Việt Nam. Điện thoại: 028.7108.9666.
+                Công ty TNHH Thương mại và dịch vụ kỹ thuật DIỆU PHÚC - GPĐKKD:
+                0316172372 do sở KH &amp; ĐT TP. HCM cấp ngày 02/03/2020. Địa
+                chỉ: 350-352 Võ Văn Kiệt, Phường Cô Giang, Quận 1, Thành phố Hồ
+                Chí Minh, Việt Nam. Điện thoại: 028.7108.9666.
               </p>
               <div className="m-b-1 d-flex justify-center align-center">
                 <a className="icon-cps-tb" />

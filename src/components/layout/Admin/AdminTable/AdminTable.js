@@ -1,33 +1,40 @@
-import './admintable.css';
+import "./admintable.css";
 
-import * as React from 'react';
+import * as React from "react";
 
-import { Box, CircularProgress, Paper, Stack, Table, TableContainer } from '@mui/material';
+import {
+  Box,
+  CircularProgress,
+  Paper,
+  Stack,
+  Table,
+  TableContainer,
+} from "@mui/material";
 
-import AdminNoData from '../AdminNoData/AdminNoData.js';
-import AdminProductForm from '../AdminProductForm/AdminProductForm';
-import AdminTableBody from './AdminTableBody/AdminTableBody.js';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import EnhancedTableHead from './AdminTableHeading/AdminTableHeading.js';
-import EnhancedTableToolbar from './AdminTableToolbar/AdminTableToolbar.js';
-import { Modal } from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import AdminNoData from "../AdminNoData/AdminNoData.js";
+import AdminProductForm from "../AdminProductForm/AdminProductForm";
+import AdminTableBody from "./AdminTableBody/AdminTableBody.js";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import EnhancedTableHead from "./AdminTableHeading/AdminTableHeading.js";
+import EnhancedTableToolbar from "./AdminTableToolbar/AdminTableToolbar.js";
+import { Modal } from "react-bootstrap";
+import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 
 export default function EnhancedTable(props) {
   const { rows, heading } = props;
 
   const skeleton = useSelector((state) => state.admin.skeleton);
 
-  const [order, setOrder] = React.useState('asc');
-  const [orderBy, setOrderBy] = React.useState('calories');
+  const [order, setOrder] = React.useState("asc");
+  const [orderBy, setOrderBy] = React.useState("calories");
   const [page] = React.useState(0);
   const [rowsPerPage] = React.useState(15);
   const [productItemData, setProductItemData] = React.useState({});
 
   const handleRequestSort = (event, property) => {
-    const isAsc = orderBy === property && order === 'asc';
-    setOrder(isAsc ? 'desc' : 'asc');
+    const isAsc = orderBy === property && order === "asc";
+    setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
   };
 
@@ -39,8 +46,13 @@ export default function EnhancedTable(props) {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Modal show={modalShow} onHide={() => setModalShow(false)} centered size="lg">
+    <Box sx={{ width: "100%" }}>
+      <Modal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        centered
+        size="lg"
+      >
         <Modal.Header className="bg-red text-white">
           <h5 className="font-weight-bold">Chỉnh sửa sản phẩm</h5>
           <CloseRoundedIcon
@@ -55,14 +67,18 @@ export default function EnhancedTable(props) {
           />
         </Modal.Body>
       </Modal>
-      <Paper sx={{ width: '100%', mb: 2 }} elevation={0}>
+      <Paper sx={{ width: "100%", mb: 2 }} elevation={0}>
         {!skeleton ? (
           <>
             {rows.length > 0 ? (
               <>
                 <EnhancedTableToolbar productItemData={productItemData} />
                 <TableContainer>
-                  <Table sx={{ minWidth: 750 }} aria-labelledby="tableTitle" size="medium">
+                  <Table
+                    sx={{ minWidth: 750 }}
+                    aria-labelledby="tableTitle"
+                    size="medium"
+                  >
                     <EnhancedTableHead
                       order={order}
                       orderBy={orderBy}
@@ -87,9 +103,17 @@ export default function EnhancedTable(props) {
           </>
         ) : (
           <Stack
-            sx={{ height: '50vh', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
-            <CircularProgress sx={{ color: 'red.main' }} />
-            <h5 className="m-t-4 font-weight-bold">Dữ liệu đang được tải ...</h5>
+            sx={{
+              height: "50vh",
+              width: "100%",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <CircularProgress sx={{ color: "red.main" }} />
+            <h5 className="m-t-4 font-weight-bold">
+              Dữ liệu đang được tải ...
+            </h5>
           </Stack>
         )}
       </Paper>
@@ -99,5 +123,5 @@ export default function EnhancedTable(props) {
 
 EnhancedTable.propTypes = {
   rows: PropTypes.array.isRequired,
-  heading: PropTypes.array.isRequired
+  heading: PropTypes.array.isRequired,
 };

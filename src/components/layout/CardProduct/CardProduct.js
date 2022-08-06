@@ -1,9 +1,9 @@
-import './cardproduct.css';
+import "./cardproduct.css";
 
-import * as React from 'react';
+import * as React from "react";
 
-import PropTypes from 'prop-types';
-import Rating from '../Rating/Rating.js';
+import PropTypes from "prop-types";
+import Rating from "../Rating/Rating.js";
 
 function CardProduct({ item }) {
   // const isPreOrder = item.preOrder.status;
@@ -21,10 +21,13 @@ function CardProduct({ item }) {
         </div>
         {isSalePrice > 0 ? (
           <div className="cp-sticker-percent d-flex align-center justify-center">
-            <p>Giảm {parseFloat(item.discount.discount_percent * 100).toFixed(0)}%</p>
+            <p>
+              Giảm {parseFloat(item.discount.discount_percent * 100).toFixed(0)}
+              %
+            </p>
           </div>
         ) : (
-          ''
+          ""
         )}
         <div className="m-b-4 cp-name">
           <a className="font-weight-bold">{item.product_name}</a>
@@ -38,20 +41,26 @@ function CardProduct({ item }) {
       )} */}
         <div className="d-flex align-center cp-price m-b-4">
           <span className="special-price font-weight-bold">
-            {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' })
+            {new Intl.NumberFormat("vi-VN", {
+              style: "currency",
+              currency: "VND",
+            })
               .format(
-                item.product_price - item.product_price * parseFloat(item.discount.discount_percent)
+                item.product_price -
+                  item.product_price *
+                    parseFloat(item.discount.discount_percent)
               )
               .toString()}
           </span>
           {isSalePrice > 0 ? (
             <span className="sale-price m-l-2">
-              {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(
-                item.product_price
-              )}
+              {new Intl.NumberFormat("vi-VN", {
+                style: "currency",
+                currency: "VND",
+              }).format(item.product_price)}
             </span>
           ) : (
-            ''
+            ""
           )}
         </div>
         {/* {isPromotion ? (
@@ -78,7 +87,7 @@ function CardProduct({ item }) {
             <Rating rating={parseInt(item.rate_point)} className="flex-1" />
           </div>
         ) : (
-          ''
+          ""
         )}
       </div>
     </a>
@@ -86,7 +95,7 @@ function CardProduct({ item }) {
 }
 
 CardProduct.propTypes = {
-  item: PropTypes.object
+  item: PropTypes.object,
 };
 
 export default CardProduct;

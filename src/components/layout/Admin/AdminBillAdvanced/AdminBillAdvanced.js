@@ -1,6 +1,6 @@
-import './adminbilladvanced.css';
+import "./adminbilladvanced.css";
 
-import * as React from 'react';
+import * as React from "react";
 
 import {
   FormControl,
@@ -10,8 +10,8 @@ import {
   MenuItem,
   Radio,
   RadioGroup,
-  Select
-} from '@mui/material';
+  Select,
+} from "@mui/material";
 import {
   changePage,
   setData,
@@ -24,13 +24,13 @@ import {
   setSearch,
   setSkeleton,
   setTo,
-  setTotalPage
-} from '../../../../redux/action.js';
+  setTotalPage,
+} from "../../../../redux/action.js";
 
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { getAllBills } from '../../../../api/AdminBills.js';
-import { mapStateToProps } from '../../../../redux/useSelector.js';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { getAllBills } from "../../../../api/AdminBills.js";
+import { mapStateToProps } from "../../../../redux/useSelector.js";
 
 class AdminProductAdvanced extends React.Component {
   constructor(props) {
@@ -43,14 +43,14 @@ class AdminProductAdvanced extends React.Component {
 
     this.props.setSkeleton(true);
     this.props.changePage(1);
-    this.props.setSearch('');
+    this.props.setSearch("");
 
     if (this.props.admin.filter_status) {
       status = this.props.admin.filter_status;
     }
 
     if (event.target.value === this.props.admin.filter_sort) {
-      await this.props.setFilterSort('');
+      await this.props.setFilterSort("");
       getAllBills().then((result) => {
         const { data, from, to, last_page, per_page } = result;
         this.props.setFrom(from);
@@ -81,14 +81,14 @@ class AdminProductAdvanced extends React.Component {
 
     this.props.setSkeleton(true);
     this.props.changePage(1);
-    this.props.setSearch('');
+    this.props.setSearch("");
 
     if (this.props.admin.filter_sort) {
       sort = this.props.admin.filter_sort;
     }
 
     if (event.target.value === this.props.admin.filter_status) {
-      await this.props.setFilterStatus('');
+      await this.props.setFilterStatus("");
       getAllBills().then((result) => {
         const { data, from, to, last_page, per_page } = result;
         this.props.setFrom(from);
@@ -143,7 +143,7 @@ class AdminProductAdvanced extends React.Component {
     return (
       <>
         <p className="m-b-4 font-weight-bold text-red">Trang hiện tại</p>
-        <FormControl sx={{ width: '100%' }} size="small">
+        <FormControl sx={{ width: "100%" }} size="small">
           <InputLabel id="demo-select-small">Trang</InputLabel>
           <Select
             labelId="demo-select-small"
@@ -151,7 +151,8 @@ class AdminProductAdvanced extends React.Component {
             value={this.props.admin.current_page}
             label="Trang"
             onChange={this.handleChange}
-            MenuProps={{ PaperProps: { sx: { maxHeight: 500 } } }}>
+            MenuProps={{ PaperProps: { sx: { maxHeight: 500 } } }}
+          >
             {[...Array(this.props.admin.total)].map((item, index) => (
               <MenuItem key={index} value={index + 1}>
                 {index + 1}
@@ -161,13 +162,17 @@ class AdminProductAdvanced extends React.Component {
         </FormControl>
         <p className="p-y-4 font-weight-bold text-red">Bộ lọc</p>
         <FormControl>
-          <FormLabel id="demo-radio-buttons-group-label" className="font-weight-bold">
+          <FormLabel
+            id="demo-radio-buttons-group-label"
+            className="font-weight-bold"
+          >
             Trạng thái
           </FormLabel>
           <RadioGroup
             value={this.props.admin.filter_status}
             aria-labelledby="demo-radio-buttons-group-label"
-            name="radio-buttons-group">
+            name="radio-buttons-group"
+          >
             <FormControlLabel
               value="pending"
               control={<Radio color="red" onClick={this.handleStatus} />}
@@ -190,13 +195,17 @@ class AdminProductAdvanced extends React.Component {
             />
           </RadioGroup>
           <br />
-          <FormLabel id="demo-radio-buttons-group-label-2" className="font-weight-bold">
+          <FormLabel
+            id="demo-radio-buttons-group-label-2"
+            className="font-weight-bold"
+          >
             Sắp xếp
           </FormLabel>
           <RadioGroup
             value={this.props.admin.filter_sort}
             aria-labelledby="demo-radio-buttons-group-label"
-            name="radio-buttons-group">
+            name="radio-buttons-group"
+          >
             <FormControlLabel
               value="asc"
               control={<Radio color="red" onClick={this.handleSort} />}
@@ -227,7 +236,7 @@ const mapDispatchToProps = (dispatch) => {
     setTotalPage: (data) => dispatch(setTotalPage(data)),
     setFilterBrand: (data) => dispatch(setFilterBrand(data)),
     setFilterSort: (data) => dispatch(setFilterSort(data)),
-    setFilterStatus: (data) => dispatch(setFilterStatus(data))
+    setFilterStatus: (data) => dispatch(setFilterStatus(data)),
   };
 };
 
@@ -244,7 +253,10 @@ AdminProductAdvanced.propTypes = {
   setTotalPage: PropTypes.func,
   setFilterBrand: PropTypes.func,
   setFilterStatus: PropTypes.func,
-  setFilterSort: PropTypes.func
+  setFilterSort: PropTypes.func,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AdminProductAdvanced);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AdminProductAdvanced);

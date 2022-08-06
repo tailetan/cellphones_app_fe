@@ -1,6 +1,6 @@
-import './adminbill.css';
+import "./adminbill.css";
 
-import * as React from 'react';
+import * as React from "react";
 
 import {
   changePage,
@@ -13,15 +13,15 @@ import {
   setSearch,
   setSkeleton,
   setTo,
-  setTotalPage
-} from '../../../../redux/action';
+  setTotalPage,
+} from "../../../../redux/action";
 
-import AdminTable from '../AdminTable/AdminTable.js';
-import BillsTableHeading from '../../../../assets/data/admin-bills-heading.json';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { getAllBills } from '../../../../api/AdminBills.js';
-import { mapStateToProps } from '../../../../redux/useSelector';
+import AdminTable from "../AdminTable/AdminTable.js";
+import BillsTableHeading from "../../../../assets/data/admin-bills-heading.json";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { getAllBills } from "../../../../api/AdminBills.js";
+import { mapStateToProps } from "../../../../redux/useSelector";
 
 class AdminBills extends React.Component {
   constructor(props) {
@@ -76,7 +76,7 @@ const mapDispatchToProps = (dispatch) => {
     setSearch: (data) => dispatch(setSearch(data)),
     setCurrentSearch: (data) => dispatch(setCurrentSearch(data)),
     setFilterCategory: (data) => dispatch(setFilterCategory(data)),
-    setFilterBrand: (data) => dispatch(setFilterBrand(data))
+    setFilterBrand: (data) => dispatch(setFilterBrand(data)),
   };
 };
 
@@ -92,7 +92,7 @@ AdminBills.propTypes = {
   setCurrentSearch: PropTypes.func,
   setFilterCategory: PropTypes.func,
   setFilterBrand: PropTypes.func,
-  admin: PropTypes.object
+  admin: PropTypes.object,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AdminBills);

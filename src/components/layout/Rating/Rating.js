@@ -1,12 +1,17 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
+import * as React from "react";
+import PropTypes from "prop-types";
 
 function Rating({ rating }) {
   const items = [];
 
   for (var i = 0; i < 5; i++) {
     items.push(
-      <span key={i} className={`material-icons-round ${i < rating ? 'text-yellow' : 'text-gray'}`}>
+      <span
+        key={i}
+        className={`material-icons-round ${
+          i < rating ? "text-yellow" : "text-gray"
+        }`}
+      >
         star
       </span>
     );
@@ -16,7 +21,7 @@ function Rating({ rating }) {
 }
 
 Rating.propTypes = {
-  rating: PropTypes.number
+  rating: PropTypes.number,
 };
 
 export default Rating;

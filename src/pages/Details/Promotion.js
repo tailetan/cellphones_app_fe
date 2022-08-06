@@ -1,4 +1,4 @@
-import PromotionImage from '../../assets/images/promotion.svg';
+import PromotionImage from "../../assets/images/promotion.svg";
 
 export default function Promotion() {
   return (
@@ -12,28 +12,30 @@ export default function Promotion() {
       <div className="p-content-layout">
         <ul>
           <li>
-            <a style={{ fontSize: '14px' }}>
+            <a style={{ fontSize: "14px" }}>
               Giảm thêm 4.000.000đ khi thu cũ đổi mới&nbsp;
               <span className="text-red font-weight-bold">(xem chi tiết)</span>
             </a>
           </li>
           <li>
-            <a style={{ fontSize: '14px', margin: '8px 0' }}>
+            <a style={{ fontSize: "14px", margin: "8px 0" }}>
               Dịch vụ phòng chờ hạng thương gia tại sân bay&nbsp;
               <span className="text-red font-weight-bold">(xem chi tiết)</span>
             </a>
           </li>
           <li>
-            <a style={{ fontSize: '14px' }}>
-              Ưu đãi Galaxy gift lên đến 1.700.000đ (VieON VIP HBO GO, Zing MP3, Phúc Long, Galaxy
-              Play)&nbsp;<span className="text-red font-weight-bold">(xem chi tiết)</span>
+            <a style={{ fontSize: "14px" }}>
+              Ưu đãi Galaxy gift lên đến 1.700.000đ (VieON VIP HBO GO, Zing MP3,
+              Phúc Long, Galaxy Play)&nbsp;
+              <span className="text-red font-weight-bold">(xem chi tiết)</span>
             </a>
           </li>
         </ul>
         <br />
         <div className="p-content-layout-2">
           <p>
-            Hotsale từ ngày&nbsp;<span className="text-red">22/07 - 25/07&nbsp;</span>: Giảm giá chỉ
+            Hotsale từ ngày&nbsp;
+            <span className="text-red">22/07 - 25/07&nbsp;</span>: Giảm giá chỉ
             còn
             <span>
               <span className="text-red">&nbsp;24.490.000đ</span>&nbsp;
@@ -42,8 +44,8 @@ export default function Promotion() {
           </p>
           <p>
             <span>Ngày cuối hotsale</span>
-            <span>&nbsp;</span>chỉ áp dụng thanh toán online 100% hoặc thanh toán trực tiếp tại cửa
-            hàng.
+            <span>&nbsp;</span>chỉ áp dụng thanh toán online 100% hoặc thanh
+            toán trực tiếp tại cửa hàng.
           </p>
         </div>
       </div>

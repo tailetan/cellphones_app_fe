@@ -1,19 +1,19 @@
-import './adminlogin.css';
+import "./adminlogin.css";
 
-import * as React from 'react';
+import * as React from "react";
 
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import Logo from '../../../../assets/images/logo.svg';
-import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import axios from 'axios';
-import Notiflix from 'notiflix';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import Logo from "../../../../assets/images/logo.svg";
+import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import axios from "axios";
+import Notiflix from "notiflix";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -21,9 +21,9 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 function AdminLogin() {
   const [values, setValues] = React.useState({
-    email: '',
-    password: '',
-    showPassword: false
+    email: "",
+    password: "",
+    showPassword: false,
   });
   const [open, setOpen] = React.useState(false);
 
@@ -34,7 +34,7 @@ function AdminLogin() {
   const handleClickShowPassword = () => {
     setValues({
       ...values,
-      showPassword: !values.showPassword
+      showPassword: !values.showPassword,
     });
   };
 
@@ -54,14 +54,14 @@ function AdminLogin() {
   };
 
   const callLogin = async () => {
-    Notiflix.Block.pulse('#admin-login-form', 'Đang đăng nhập vui lòng đợi');
-    const url = '/login';
+    Notiflix.Block.pulse("#admin-login-form", "Đang đăng nhập vui lòng đợi");
+    const url = "/login";
     const body = { email: values.email, password: values.password };
     try {
       const result = await axios.post(url, body);
       const { data } = result;
       const { token } = data;
-      localStorage.setItem('token', token);
+      localStorage.setItem("token", token);
       setOpen(true);
       setTimeout(() => {
         window.location.reload();
@@ -75,10 +75,11 @@ function AdminLogin() {
     <div>
       <Snackbar
         open={open}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         autoHideDuration={6000}
-        onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
           Đăng nhập thành công
         </Alert>
       </Snackbar>
@@ -101,7 +102,7 @@ function AdminLogin() {
                   helperText="Vui lòng nhập Email"
                   color="red"
                   value={values.email}
-                  onChange={handleChange('email')}
+                  onChange={handleChange("email")}
                 />
                 <TextField
                   size="small"
@@ -110,9 +111,9 @@ function AdminLogin() {
                   variant="outlined"
                   helperText="Vui lòng tạo mật khẩu"
                   color="red"
-                  type={values.showPassword ? 'text' : 'password'}
+                  type={values.showPassword ? "text" : "password"}
                   value={values.password}
-                  onChange={handleChange('password')}
+                  onChange={handleChange("password")}
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
@@ -120,11 +121,16 @@ function AdminLogin() {
                           aria-label="toggle password visibility"
                           onClick={handleClickShowPassword}
                           onMouseDown={handleMouseDownPassword}
-                          edge="end">
-                          {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                          edge="end"
+                        >
+                          {values.showPassword ? (
+                            <VisibilityOff />
+                          ) : (
+                            <Visibility />
+                          )}
                         </IconButton>
                       </InputAdornment>
-                    )
+                    ),
                   }}
                 />
                 <a className="forgot">Quên mật khẩu</a>
@@ -133,13 +139,14 @@ function AdminLogin() {
                   fullWidth
                   type="submit"
                   sx={[
-                    { backgroundColor: 'red.main' },
+                    { backgroundColor: "red.main" },
                     {
-                      '&:hover': {
-                        backgroundColor: 'red.main'
-                      }
-                    }
-                  ]}>
+                      "&:hover": {
+                        backgroundColor: "red.main",
+                      },
+                    },
+                  ]}
+                >
                   Đăng nhập
                 </Button>
               </Stack>

@@ -1,12 +1,14 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
+import * as React from "react";
+import PropTypes from "prop-types";
+import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
 
 function BoxTitle({ title, items }) {
   let chipArray = [];
   if (items.length > 0) {
-    chipArray = items.map((item, index) => <Chip key={index} label={item.label} />);
+    chipArray = items.map((item, index) => (
+      <Chip key={index} label={item.label} />
+    ));
   }
 
   return (
@@ -25,7 +27,7 @@ function BoxTitle({ title, items }) {
 
 BoxTitle.propTypes = {
   title: PropTypes.string,
-  items: PropTypes.array
+  items: PropTypes.array,
 };
 
 export default BoxTitle;

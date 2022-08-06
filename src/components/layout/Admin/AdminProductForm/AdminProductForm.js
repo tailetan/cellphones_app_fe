@@ -1,6 +1,6 @@
-import './adminproductform.css';
+import "./adminproductform.css";
 
-import * as React from 'react';
+import * as React from "react";
 
 import {
   Avatar,
@@ -10,8 +10,8 @@ import {
   Stack,
   Switch,
   TextField,
-  Typography
-} from '@mui/material';
+  Typography,
+} from "@mui/material";
 import {
   changePage,
   setAddNavigation,
@@ -24,129 +24,133 @@ import {
   setSearch,
   setSkeleton,
   setTo,
-  setTotalPage
-} from '../../../../redux/action.js';
-import { createProduct, getAllProducts, updateProduct } from '../../../../api/AdminProducts.js';
+  setTotalPage,
+} from "../../../../redux/action.js";
+import {
+  createProduct,
+  getAllProducts,
+  updateProduct,
+} from "../../../../api/AdminProducts.js";
 
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import NumberFormat from 'react-number-format';
-import PropTypes from 'prop-types';
-import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
-import Select from 'react-select';
-import Swal from 'sweetalert2';
-import Tiptap from '../../Tiptap/Tiptap.js';
-import { styled } from '@mui/material/styles';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import AddRoundedIcon from "@mui/icons-material/AddRounded";
+import NumberFormat from "react-number-format";
+import PropTypes from "prop-types";
+import RemoveRoundedIcon from "@mui/icons-material/RemoveRounded";
+import Select from "react-select";
+import Swal from "sweetalert2";
+import Tiptap from "../../Tiptap/Tiptap.js";
+import { styled } from "@mui/material/styles";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const DiscountSwitch = styled(Switch)(({ theme }) => ({
   padding: 8,
-  '& .MuiSwitch-track': {
+  "& .MuiSwitch-track": {
     borderRadius: 22 / 2,
-    '&:before, &:after': {
+    "&:before, &:after": {
       content: '""',
-      position: 'absolute',
-      top: '50%',
-      transform: 'translateY(-50%)',
+      position: "absolute",
+      top: "50%",
+      transform: "translateY(-50%)",
       width: 16,
-      height: 16
+      height: 16,
     },
-    '&:before': {
+    "&:before": {
       backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 24 24"><path fill="${encodeURIComponent(
         theme.palette.getContrastText(theme.palette.primary.main)
       )}" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>')`,
-      left: 12
+      left: 12,
     },
-    '&:after': {
+    "&:after": {
       backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 24 24"><path fill="${encodeURIComponent(
         theme.palette.getContrastText(theme.palette.primary.main)
       )}" d="M19,13H5V11H19V13Z" /></svg>')`,
-      right: 12
-    }
+      right: 12,
+    },
   },
-  '& .MuiSwitch-thumb': {
-    boxShadow: 'none',
+  "& .MuiSwitch-thumb": {
+    boxShadow: "none",
     width: 16,
     height: 16,
-    margin: 2
-  }
+    margin: 2,
+  },
 }));
 
 const categoryList = [
   {
     id: 1,
-    value: 'Điện Thoại',
-    label: 'Điện Thoại'
+    value: "Điện Thoại",
+    label: "Điện Thoại",
   },
   {
     id: 2,
-    value: 'Laptop',
-    label: 'Laptop'
+    value: "Laptop",
+    label: "Laptop",
   },
   {
     id: 3,
-    value: 'Tablet',
-    label: 'Tablet'
+    value: "Tablet",
+    label: "Tablet",
   },
   {
     id: 4,
-    value: 'Phụ kiện',
-    label: 'Phụ kiện'
-  }
+    value: "Phụ kiện",
+    label: "Phụ kiện",
+  },
 ];
 
 const brandList = [
   {
     id: 1,
-    value: 'Apple',
-    label: 'Apple'
+    value: "Apple",
+    label: "Apple",
   },
   {
     id: 2,
-    value: 'Samsung',
-    label: 'Samsung'
+    value: "Samsung",
+    label: "Samsung",
   },
   {
     id: 3,
-    value: 'Xiaomi',
-    label: 'Xiaomi'
+    value: "Xiaomi",
+    label: "Xiaomi",
   },
   {
     id: 4,
-    value: 'Oppo',
-    label: 'Oppo'
+    value: "Oppo",
+    label: "Oppo",
   },
   {
     id: 5,
-    value: 'Realme',
-    label: 'Realme'
+    value: "Realme",
+    label: "Realme",
   },
   {
     id: 6,
-    value: 'HP',
-    label: 'HP'
+    value: "HP",
+    label: "HP",
   },
   {
     id: 7,
-    value: 'Dell',
-    label: 'Dell'
+    value: "Dell",
+    label: "Dell",
   },
   {
     id: 8,
-    value: 'Lenovo',
-    label: 'Lenovo'
+    value: "Lenovo",
+    label: "Lenovo",
   },
   {
     id: 9,
-    value: 'Asus',
-    label: 'Asus'
+    value: "Asus",
+    label: "Asus",
   },
   {
     id: 10,
-    value: 'Acer',
-    label: 'Acer'
-  }
+    value: "Acer",
+    label: "Acer",
+  },
 ];
 
 function percentageSale() {
@@ -155,7 +159,7 @@ function percentageSale() {
     percentageSaleList.push({
       id: i + 1,
       value: i,
-      label: i
+      label: i,
     });
   }
   return percentageSaleList;
@@ -166,9 +170,9 @@ const percentageSaleList = percentageSale();
 const AdminProductForm = (props) => {
   const dispatch = useDispatch();
 
-  const [product_name, setProductName] = React.useState('');
-  const [product_category, setProductCategory] = React.useState('');
-  const [product_brand, setProductBrand] = React.useState('');
+  const [product_name, setProductName] = React.useState("");
+  const [product_category, setProductCategory] = React.useState("");
+  const [product_brand, setProductBrand] = React.useState("");
   const [status, setStatus] = React.useState(false);
   const [quantity, setQuantity] = React.useState(1);
   const [price, setPrice] = React.useState(0);
@@ -176,33 +180,37 @@ const AdminProductForm = (props) => {
   const [salePrice, setSalePrice] = React.useState(0);
   const [imageArray, setImageArray] = React.useState([
     {
-      value: ''
-    }
+      value: "",
+    },
   ]);
   const [skuArray, setSkuArray] = React.useState([
     {
-      key: '',
-      value: ''
-    }
+      key: "",
+      value: "",
+    },
   ]);
   const [percentage_sale, setPercentageSale] = React.useState({
     id: 1,
     value: 0,
-    label: 0
+    label: 0,
   });
   const [productItemData] = React.useState(props.productItemData);
   const [content, setContent] = React.useState(null);
-  const [button_title, setButtonTitle] = React.useState('Thêm sản phẩm');
+  const [button_title, setButtonTitle] = React.useState("Thêm sản phẩm");
   const [id, setId] = React.useState(null);
 
   useEffect(() => {
     if (productItemData) {
-      setButtonTitle('Chỉnh sửa sản phẩm');
+      setButtonTitle("Chỉnh sửa sản phẩm");
       setId(productItemData.id);
       setProductName(productItemData.product_name);
-      const category = categoryList.find((element) => element.id === productItemData.category_id);
+      const category = categoryList.find(
+        (element) => element.id === productItemData.category_id
+      );
       setProductCategory(category);
-      const brand = brandList.find((element) => element.id === productItemData.brand_id);
+      const brand = brandList.find(
+        (element) => element.id === productItemData.brand_id
+      );
       setProductBrand(brand);
       if (productItemData.product_quantity === 0) {
         setStatus(false);
@@ -226,8 +234,8 @@ const AdminProductForm = (props) => {
           setImageArray((prevState) => [
             ...prevState,
             {
-              value: item
-            }
+              value: item,
+            },
           ]);
         });
       }
@@ -236,12 +244,12 @@ const AdminProductForm = (props) => {
         const temp_array = [];
         const arraySku = Object.keys(productItemData.sku).map((key) => [
           key,
-          productItemData.sku[key]
+          productItemData.sku[key],
         ]);
         arraySku.forEach((item) => {
           temp_array.push({
             key: item[0],
-            value: item[1]
+            value: item[1],
           });
         });
         setSkuArray(temp_array);
@@ -302,8 +310,8 @@ const AdminProductForm = (props) => {
     setImageArray([
       ...imageArray,
       {
-        value: ''
-      }
+        value: "",
+      },
     ]);
   };
 
@@ -311,21 +319,22 @@ const AdminProductForm = (props) => {
     setSkuArray([
       ...skuArray,
       {
-        key: '',
-        value: ''
-      }
+        key: "",
+        value: "",
+      },
     ]);
   };
 
   const formatCurrency = (event) => {
     setPrice(event.target.value);
-    const salePrice = event.target.value - (percentage_sale.value / 100) * event.target.value;
-    const formatSalePrice = new Intl.NumberFormat('vi-VN', {
-      style: 'currency',
-      currency: 'VND'
+    const salePrice =
+      event.target.value - (percentage_sale.value / 100) * event.target.value;
+    const formatSalePrice = new Intl.NumberFormat("vi-VN", {
+      style: "currency",
+      currency: "VND",
     })
       .format(salePrice)
-      .replace('₫', '')
+      .replace("₫", "")
       .trim();
     setSalePrice(formatSalePrice);
   };
@@ -333,17 +342,19 @@ const AdminProductForm = (props) => {
   const handleSalePrice = (event) => {
     setPercentageSale(event);
     const salePrice = price - (event.value / 100) * price;
-    const formatSalePrice = new Intl.NumberFormat('vi-VN', {
-      style: 'currency',
-      currency: 'VND'
+    const formatSalePrice = new Intl.NumberFormat("vi-VN", {
+      style: "currency",
+      currency: "VND",
     })
       .format(salePrice)
-      .replace('₫', '')
+      .replace("₫", "")
       .trim();
     setSalePrice(formatSalePrice);
   };
 
-  const current_description = useSelector((state) => state.admin.current_description);
+  const current_description = useSelector(
+    (state) => state.admin.current_description
+  );
   const filter_category = useSelector((state) => state.admin.filter_category);
   const filter_brand = useSelector((state) => state.admin.filter_brand);
   const search_handle = useSelector((state) => state.admin.search);
@@ -352,7 +363,12 @@ const AdminProductForm = (props) => {
   const checkField = () => {
     const booleanArray = [];
 
-    if (product_name === '' || product_category === '' || product_brand === '' || price === '') {
+    if (
+      product_name === "" ||
+      product_category === "" ||
+      product_brand === "" ||
+      price === ""
+    ) {
       booleanArray.push(false);
     } else {
       booleanArray.push(true);
@@ -364,7 +380,7 @@ const AdminProductForm = (props) => {
       booleanArray.push(true);
     }
 
-    if (status === true && quantity === '') {
+    if (status === true && quantity === "") {
       booleanArray.push(false);
     } else {
       booleanArray.push(true);
@@ -377,7 +393,7 @@ const AdminProductForm = (props) => {
     }
 
     imageArray.forEach((image) => {
-      if (image.value === '') {
+      if (image.value === "") {
         booleanArray.push(false);
       } else {
         booleanArray.push(true);
@@ -385,7 +401,7 @@ const AdminProductForm = (props) => {
     });
 
     skuArray.forEach((sku) => {
-      if (sku.key === '' || sku.value === '') {
+      if (sku.key === "" || sku.value === "") {
         booleanArray.push(false);
       } else {
         booleanArray.push(true);
@@ -397,15 +413,15 @@ const AdminProductForm = (props) => {
 
   const Toast = Swal.mixin({
     toast: true,
-    position: 'bottom-end',
+    position: "bottom-end",
     showConfirmButton: false,
     timer: 5000,
     timerProgressBar: true,
-    width: '26em',
+    width: "26em",
     didOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer);
-      toast.addEventListener('mouseleave', Swal.resumeTimer);
-    }
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
   });
 
   const createCreateProduct = (e) => {
@@ -426,33 +442,34 @@ const AdminProductForm = (props) => {
       product_name,
       product_thumbnail: image[0],
       product_images: [...image],
-      status: status ? 'Available' : 'Not Available',
+      status: status ? "Available" : "Not Available",
       product_quantity: quantity > 0 ? quantity : 0,
       desc: current_description,
       sku: objectSku,
       product_price: price,
       category_id: product_category.id,
       brand_id: product_brand.id,
-      discount_id: percentage_sale.id
+      discount_id: percentage_sale.id,
     };
 
-    if (button_title === 'Thêm sản phẩm') {
+    if (button_title === "Thêm sản phẩm") {
       createProduct(object).then((result) => {
-        if (result.message === 'Product create successfully') {
+        if (result.message === "Product create successfully") {
           Toast.fire({
-            icon: 'success',
-            title: 'Thêm sản phẩm thành công!',
-            background: 'rgba(243, 252, 245, 1)',
-            color: '#28a745'
+            icon: "success",
+            title: "Thêm sản phẩm thành công!",
+            background: "rgba(243, 252, 245, 1)",
+            color: "#28a745",
           });
           dispatch(setAddNavigation(false));
           dispatch(setSkeleton(true));
-          dispatch(setFilterBrand(''));
-          dispatch(setFilterCategory(''));
-          dispatch(setSearch(''));
-          dispatch(setCurrentSearch(''));
+          dispatch(setFilterBrand(""));
+          dispatch(setFilterCategory(""));
+          dispatch(setSearch(""));
+          dispatch(setCurrentSearch(""));
           getAllProducts().then((result) => {
-            const { current_page, data, from, to, last_page, per_page } = result;
+            const { current_page, data, from, to, last_page, per_page } =
+              result;
             dispatch(changePage(current_page));
             dispatch(setFrom(from));
             dispatch(setTo(to));
@@ -468,25 +485,25 @@ const AdminProductForm = (props) => {
       let category;
       let brand;
 
-      if (search_handle !== '') {
+      if (search_handle !== "") {
         search = search_handle;
       }
 
-      if (filter_category !== '') {
+      if (filter_category !== "") {
         category = filter_category;
       }
 
-      if (filter_brand !== '') {
+      if (filter_brand !== "") {
         brand = filter_brand;
       }
 
       updateProduct(id, object).then((result) => {
-        if (result.message === 'Product create successfully') {
+        if (result.message === "Product create successfully") {
           Toast.fire({
-            icon: 'success',
-            title: 'Chỉnh sửa sản phẩm thành công!',
-            background: 'rgba(243, 252, 245, 1)',
-            color: '#28a745'
+            icon: "success",
+            title: "Chỉnh sửa sản phẩm thành công!",
+            background: "rgba(243, 252, 245, 1)",
+            color: "#28a745",
           });
           props.setModal();
           dispatch(setSkeleton(true));
@@ -494,9 +511,10 @@ const AdminProductForm = (props) => {
             page: current_page,
             search: search,
             category: category,
-            brand: brand
+            brand: brand,
           }).then((result) => {
-            const { current_page, data, from, to, last_page, per_page } = result;
+            const { current_page, data, from, to, last_page, per_page } =
+              result;
             dispatch(changePage(current_page));
             dispatch(setFrom(from));
             dispatch(setTo(to));
@@ -516,11 +534,12 @@ const AdminProductForm = (props) => {
         <Stack
           className="admin-product-form"
           sx={{
-            width: '100%',
-            padding: '12px',
-            margin: '0 auto',
-            backgroundColor: 'grey.form'
-          }}>
+            width: "100%",
+            padding: "12px",
+            margin: "0 auto",
+            backgroundColor: "grey.form",
+          }}
+        >
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <h5 className="font-weight-bold">Thông tin chung</h5>
@@ -576,9 +595,13 @@ const AdminProductForm = (props) => {
                 decimalSeparator=","
                 helperText="Vui lòng nhập giá của sản phẩm"
                 InputProps={{
-                  endAdornment: <InputAdornment position="end">₫</InputAdornment>
+                  endAdornment: (
+                    <InputAdornment position="end">₫</InputAdornment>
+                  ),
                 }}
-                onValueChange={({ value: value }) => formatCurrency({ target: { value: value } })}
+                onValueChange={({ value: value }) =>
+                  formatCurrency({ target: { value: value } })
+                }
               />
             </Grid>
             <Grid item xs={12}>
@@ -588,7 +611,7 @@ const AdminProductForm = (props) => {
                 <DiscountSwitch
                   checked={status}
                   color="red"
-                  inputProps={{ 'aria-label': 'controlled' }}
+                  inputProps={{ "aria-label": "controlled" }}
                   onChange={() => setStatus(!status)}
                 />
                 <Typography>Còn hàng</Typography>
@@ -602,7 +625,7 @@ const AdminProductForm = (props) => {
                   helperText="Vui lòng nhập số lượng sản phẩm"
                   value={quantity}
                   onChange={() => {
-                    if (event.target.value >= 1 || event.target.value === '') {
+                    if (event.target.value >= 1 || event.target.value === "") {
                       setQuantity(event.target.value);
                     } else {
                       setQuantity(1);
@@ -624,7 +647,7 @@ const AdminProductForm = (props) => {
                 <DiscountSwitch
                   checked={discount}
                   color="red"
-                  inputProps={{ 'aria-label': 'controlled' }}
+                  inputProps={{ "aria-label": "controlled" }}
                   onChange={() => setDiscount(!discount)}
                 />
                 <Typography>Giảm giá</Typography>
@@ -646,7 +669,12 @@ const AdminProductForm = (props) => {
                 </Grid>
                 <Grid item xs={12}>
                   <p className="m-b-4 font-weight-bold">Giá giảm</p>
-                  <TextField fullWidth variant="filled" disabled value={salePrice} />
+                  <TextField
+                    fullWidth
+                    variant="filled"
+                    disabled
+                    value={salePrice}
+                  />
                 </Grid>
               </Grid>
             )}
@@ -670,8 +698,13 @@ const AdminProductForm = (props) => {
                     {imageArray.length > 1 && (
                       <Avatar
                         onClick={() => removeImage(idx)}
-                        sx={{ bgcolor: 'red.main', cursor: 'pointer', marginLeft: '8px' }}
-                        variant="rounded">
+                        sx={{
+                          bgcolor: "red.main",
+                          cursor: "pointer",
+                          marginLeft: "8px",
+                        }}
+                        variant="rounded"
+                      >
                         <RemoveRoundedIcon />
                       </Avatar>
                     )}
@@ -681,8 +714,9 @@ const AdminProductForm = (props) => {
             <Grid item xs={12}>
               <Avatar
                 onClick={addImage}
-                sx={{ bgcolor: 'red.main', cursor: 'pointer' }}
-                variant="rounded">
+                sx={{ bgcolor: "red.main", cursor: "pointer" }}
+                variant="rounded"
+              >
                 <AddRoundedIcon />
               </Avatar>
             </Grid>
@@ -714,8 +748,13 @@ const AdminProductForm = (props) => {
                     {skuArray.length > 1 && (
                       <Avatar
                         onClick={() => removeSku(idx)}
-                        sx={{ bgcolor: 'red.main', cursor: 'pointer', marginLeft: '8px' }}
-                        variant="rounded">
+                        sx={{
+                          bgcolor: "red.main",
+                          cursor: "pointer",
+                          marginLeft: "8px",
+                        }}
+                        variant="rounded"
+                      >
                         <RemoveRoundedIcon />
                       </Avatar>
                     )}
@@ -725,8 +764,9 @@ const AdminProductForm = (props) => {
             <Grid item xs={12}>
               <Avatar
                 onClick={addSku}
-                sx={{ bgcolor: 'red.main', cursor: 'pointer' }}
-                variant="rounded">
+                sx={{ bgcolor: "red.main", cursor: "pointer" }}
+                variant="rounded"
+              >
                 <AddRoundedIcon />
               </Avatar>
             </Grid>
@@ -734,16 +774,17 @@ const AdminProductForm = (props) => {
           <Grid item xs={12} className="m-t-4">
             <Button
               sx={[
-                { backgroundColor: 'red.main', color: 'white.main' },
+                { backgroundColor: "red.main", color: "white.main" },
                 {
-                  '&:hover': {
-                    backgroundColor: 'red.main',
-                    color: 'white.main'
-                  }
-                }
+                  "&:hover": {
+                    backgroundColor: "red.main",
+                    color: "white.main",
+                  },
+                },
               ]}
               disabled={!checkField()}
-              type="submit">
+              type="submit"
+            >
               {button_title}
             </Button>
           </Grid>
@@ -755,7 +796,7 @@ const AdminProductForm = (props) => {
 
 AdminProductForm.propTypes = {
   productItemData: PropTypes.object,
-  setModal: PropTypes.func
+  setModal: PropTypes.func,
 };
 
 export default AdminProductForm;

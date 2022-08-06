@@ -1,8 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const getAllUsers = async ({ paginate, page, sort, search } = {}) => {
   const queryStringArray = [];
-  let url = '/users';
+  let url = "/users";
   let data = {};
 
   if (paginate) {
@@ -22,20 +22,23 @@ export const getAllUsers = async ({ paginate, page, sort, search } = {}) => {
   }
 
   for (const index in queryStringArray) {
-    url += index === '0' ? `?${queryStringArray[index]}` : `&${queryStringArray[index]}`;
+    url +=
+      index === "0"
+        ? `?${queryStringArray[index]}`
+        : `&${queryStringArray[index]}`;
   }
 
   await axios
     .get(url, {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`
-      }
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     })
     .then((result) => {
       data = { ...result.data };
     })
     .catch((error) => {
-      console.log('There was an error!', error);
+      console.log("There was an error!", error);
     });
 
   return data;
@@ -46,8 +49,8 @@ export const deleteUser = async (id) => {
 
   const config = {
     headers: {
-      Authorization: `Bearer ${localStorage.getItem('token')}`
-    }
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
   };
 
   await axios
@@ -56,7 +59,7 @@ export const deleteUser = async (id) => {
       data = { ...result.data };
     })
     .catch((error) => {
-      console.log('There was an error!', error);
+      console.log("There was an error!", error);
     });
 
   return data;

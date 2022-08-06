@@ -1,12 +1,12 @@
-import './admindashboardoverview.css';
+import "./admindashboardoverview.css";
 
-import * as React from 'react';
+import * as React from "react";
 
-import CreditCardRoundedIcon from '@mui/icons-material/CreditCardRounded';
-import CreditScoreRoundedIcon from '@mui/icons-material/CreditScoreRounded';
-import { Grid } from '@mui/material';
-import MoveToInboxRoundedIcon from '@mui/icons-material/MoveToInboxRounded';
-import OutboxRoundedIcon from '@mui/icons-material/OutboxRounded';
+import CreditCardRoundedIcon from "@mui/icons-material/CreditCardRounded";
+import CreditScoreRoundedIcon from "@mui/icons-material/CreditScoreRounded";
+import { Grid } from "@mui/material";
+import MoveToInboxRoundedIcon from "@mui/icons-material/MoveToInboxRounded";
+import OutboxRoundedIcon from "@mui/icons-material/OutboxRounded";
 
 export default class AdminDashboardOverview extends React.Component {
   constructor(props) {

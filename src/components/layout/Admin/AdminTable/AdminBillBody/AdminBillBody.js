@@ -1,39 +1,39 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { Avatar, Chip, Stack, Tooltip } from '@mui/material';
-import { deleteBill, getAllBills } from '../../../../../api/AdminBills';
+import { Avatar, Chip, Stack, Tooltip } from "@mui/material";
+import { deleteBill, getAllBills } from "../../../../../api/AdminBills";
 import {
   setData,
   setFrom,
   setPerPage,
   setSkeleton,
   setTo,
-  setTotalPage
-} from '../../../../../redux/action';
-import { useDispatch, useSelector } from 'react-redux';
+  setTotalPage,
+} from "../../../../../redux/action";
+import { useDispatch, useSelector } from "react-redux";
 
-import CachedRoundedIcon from '@mui/icons-material/CachedRounded';
-import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
-import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
-import LocalShippingRoundedIcon from '@mui/icons-material/LocalShippingRounded';
-import Notiflix from 'notiflix';
-import PropTypes from 'prop-types';
-import StyledTableCell from '../../Custom/TableCell';
-import Swal from 'sweetalert2';
-import axios from 'axios';
-import moment from 'moment';
+import CachedRoundedIcon from "@mui/icons-material/CachedRounded";
+import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
+import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
+import LocalShippingRoundedIcon from "@mui/icons-material/LocalShippingRounded";
+import Notiflix from "notiflix";
+import PropTypes from "prop-types";
+import StyledTableCell from "../../Custom/TableCell";
+import Swal from "sweetalert2";
+import axios from "axios";
+import moment from "moment";
 
 const Toast = Swal.mixin({
   toast: true,
-  position: 'bottom-end',
+  position: "bottom-end",
   showConfirmButton: false,
   timer: 5000,
   timerProgressBar: true,
-  width: '26em',
+  width: "26em",
   didOpen: (toast) => {
-    toast.addEventListener('mouseenter', Swal.stopTimer);
-    toast.addEventListener('mouseleave', Swal.resumeTimer);
-  }
+    toast.addEventListener("mouseenter", Swal.stopTimer);
+    toast.addEventListener("mouseleave", Swal.resumeTimer);
+  },
 });
 
 function AdminBillBody(props) {
@@ -46,39 +46,39 @@ function AdminBillBody(props) {
   const filter_sort = useSelector((state) => state.admin.filter_sort);
 
   const formatData = (date) => {
-    return moment(date).format('DD/MM/yyyy h:mm:ss');
+    return moment(date).format("DD/MM/yyyy h:mm:ss");
   };
 
   const changeStatus = async (id, status) => {
-    Notiflix.Block.pulse('#root', 'Đang xử lý vui lòng đợi', {
-      zindex: 2000
+    Notiflix.Block.pulse("#root", "Đang xử lý vui lòng đợi", {
+      zindex: 2000,
     });
     const result = await axios.put(
       `/orders/update/${id}`,
       {
-        status
+        status,
       },
       {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        }
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
       }
     );
     if (result.status === 200) {
       Toast.fire({
-        icon: 'success',
-        title: 'Cập nhật trạng thái thành công!',
-        background: 'rgba(243, 252, 245, 1)',
-        color: '#28a745'
+        icon: "success",
+        title: "Cập nhật trạng thái thành công!",
+        background: "rgba(243, 252, 245, 1)",
+        color: "#28a745",
       });
       let sort;
       let status;
 
-      if (filter_status !== '') {
+      if (filter_status !== "") {
         status = filter_status;
       }
 
-      if (filter_sort !== '') {
+      if (filter_sort !== "") {
         sort = filter_sort;
       }
 
@@ -92,19 +92,19 @@ function AdminBillBody(props) {
         dispatch(setSkeleton(false));
       });
 
-      Notiflix.Block.remove('#root');
+      Notiflix.Block.remove("#root");
     }
   };
 
   const confirmDialog = (id) => {
     Swal.fire({
-      text: 'Bạn chắc chắn muốn lưu trữ đơn hàng này',
-      icon: 'question',
+      text: "Bạn chắc chắn muốn lưu trữ đơn hàng này",
+      icon: "question",
       showCancelButton: true,
       focusConfirm: false,
-      cancelButtonText: 'Hủy',
-      confirmButtonText: 'Chắc chắn',
-      confirmButtonColor: '#d70018'
+      cancelButtonText: "Hủy",
+      confirmButtonText: "Chắc chắn",
+      confirmButtonColor: "#d70018",
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(setSkeleton(true));
@@ -112,11 +112,11 @@ function AdminBillBody(props) {
         let sort;
         let status;
 
-        if (filter_status !== '') {
+        if (filter_status !== "") {
           status = filter_status;
         }
 
-        if (filter_sort !== '') {
+        if (filter_sort !== "") {
           sort = filter_sort;
         }
 
@@ -124,17 +124,17 @@ function AdminBillBody(props) {
           if (Object.keys(result).length === 0) {
             dispatch(setSkeleton(false));
             Toast.fire({
-              icon: 'error',
-              title: 'Xóa đơn hàng không thành công!',
-              background: 'rgba(253, 241, 244, 1)',
-              color: '#d70018'
+              icon: "error",
+              title: "Xóa đơn hàng không thành công!",
+              background: "rgba(253, 241, 244, 1)",
+              color: "#d70018",
             });
           } else if (Object.keys(result).length > 0 && result.success) {
             Toast.fire({
-              icon: 'success',
-              title: 'Xóa đơn hàng thành công!',
-              background: 'rgba(243, 252, 245, 1)',
-              color: '#28a745'
+              icon: "success",
+              title: "Xóa đơn hàng thành công!",
+              background: "rgba(243, 252, 245, 1)",
+              color: "#28a745",
             });
             getAllBills({ page: current_page, status, sort }).then((result) => {
               const { data, from, to, last_page, per_page } = result;
@@ -158,61 +158,63 @@ function AdminBillBody(props) {
         Hóa đơn {index + 1}
       </StyledTableCell>
       <StyledTableCell align="left">
-        {new Intl.NumberFormat('vi-VN', {
-          style: 'currency',
-          currency: 'VND'
+        {new Intl.NumberFormat("vi-VN", {
+          style: "currency",
+          currency: "VND",
         })
           .format(row.order_amount)
-          .replace('₫', '')
+          .replace("₫", "")
           .trim()}
         ₫
       </StyledTableCell>
       <StyledTableCell align="left">
-        <div className="font-weight-bold">{formatData(row.order_date).split(' ')[0]}</div>
-        <div>{formatData(row.order_date).split(' ')[1]}</div>
+        <div className="font-weight-bold">
+          {formatData(row.order_date).split(" ")[0]}
+        </div>
+        <div>{formatData(row.order_date).split(" ")[1]}</div>
       </StyledTableCell>
       <StyledTableCell align="left">
-        {row.status === 'pending' && (
+        {row.status === "pending" && (
           <Chip
             label="Chưa xử lý"
             sx={{
-              backgroundColor: 'orange.main',
-              color: 'white.main',
+              backgroundColor: "orange.main",
+              color: "white.main",
               fontWeight: 700,
-              borderRadius: '6px'
+              borderRadius: "6px",
             }}
           />
         )}
-        {row.status === 'processing' && (
+        {row.status === "processing" && (
           <Chip
             label="Đang xử lý"
             sx={{
-              backgroundColor: 'blue.main',
-              color: 'white.main',
+              backgroundColor: "blue.main",
+              color: "white.main",
               fontWeight: 700,
-              borderRadius: '6px'
+              borderRadius: "6px",
             }}
           />
         )}
-        {row.status === 'completed' && (
+        {row.status === "completed" && (
           <Chip
             label="Hoàn thành"
             sx={{
-              backgroundColor: 'green.main',
-              color: 'white.main',
+              backgroundColor: "green.main",
+              color: "white.main",
               fontWeight: 700,
-              borderRadius: '6px'
+              borderRadius: "6px",
             }}
           />
         )}
-        {row.status === 'cancelled' && (
+        {row.status === "cancelled" && (
           <Chip
             label="Đã hủy"
             sx={{
-              backgroundColor: 'blue.light',
-              color: 'white.main',
+              backgroundColor: "blue.light",
+              color: "white.main",
               fontWeight: 700,
-              borderRadius: '6px'
+              borderRadius: "6px",
             }}
           />
         )}
@@ -222,15 +224,18 @@ function AdminBillBody(props) {
           <Tooltip title="Xử lý">
             <Avatar
               sx={{
-                bgcolor: `${row.status === 'pending' ? 'blue.main' : 'grey.main'}`,
-                cursor: `${row.status === 'pending' ? 'pointer' : ''}`
+                bgcolor: `${
+                  row.status === "pending" ? "blue.main" : "grey.main"
+                }`,
+                cursor: `${row.status === "pending" ? "pointer" : ""}`,
               }}
               variant="rounded"
               onClick={() => {
-                if (row.status === 'pending') {
-                  changeStatus(row.id, 'processing');
+                if (row.status === "pending") {
+                  changeStatus(row.id, "processing");
                 }
-              }}>
+              }}
+            >
               <CachedRoundedIcon />
             </Avatar>
           </Tooltip>
@@ -238,20 +243,23 @@ function AdminBillBody(props) {
             <Avatar
               sx={{
                 bgcolor: `${
-                  row.status === 'processing' || row.status === 'pending'
-                    ? 'green.main'
-                    : 'grey.main'
+                  row.status === "processing" || row.status === "pending"
+                    ? "green.main"
+                    : "grey.main"
                 }`,
                 cursor: `${
-                  row.status === 'processing' || row.status === 'pending' ? 'pointer' : ''
-                }`
+                  row.status === "processing" || row.status === "pending"
+                    ? "pointer"
+                    : ""
+                }`,
               }}
               variant="rounded"
               onClick={() => {
-                if (row.status === 'processing' || row.status === 'pending') {
-                  changeStatus(row.id, 'completed');
+                if (row.status === "processing" || row.status === "pending") {
+                  changeStatus(row.id, "completed");
                 }
-              }}>
+              }}
+            >
               <LocalShippingRoundedIcon />
             </Avatar>
           </Tooltip>
@@ -259,28 +267,32 @@ function AdminBillBody(props) {
             <Avatar
               sx={{
                 bgcolor: `${
-                  row.status !== 'cancelled' && row.status !== 'completed'
-                    ? 'blue.light'
-                    : 'grey.main'
+                  row.status !== "cancelled" && row.status !== "completed"
+                    ? "blue.light"
+                    : "grey.main"
                 }`,
                 cursor: `${
-                  row.status !== 'cancelled' && row.status !== 'completed' ? 'pointer' : ''
-                }`
+                  row.status !== "cancelled" && row.status !== "completed"
+                    ? "pointer"
+                    : ""
+                }`,
               }}
               variant="rounded"
               onClick={() => {
-                if (row.status !== 'cancelled' && row.status !== 'completed') {
-                  changeStatus(row.id, 'cancelled');
+                if (row.status !== "cancelled" && row.status !== "completed") {
+                  changeStatus(row.id, "cancelled");
                 }
-              }}>
+              }}
+            >
               <CancelRoundedIcon />
             </Avatar>
           </Tooltip>
           <Tooltip title="Lưu trữ">
             <Avatar
               onClick={() => confirmDialog(row.id)}
-              sx={{ bgcolor: 'red.main', cursor: 'pointer' }}
-              variant="rounded">
+              sx={{ bgcolor: "red.main", cursor: "pointer" }}
+              variant="rounded"
+            >
               <DeleteRoundedIcon />
             </Avatar>
           </Tooltip>
@@ -295,5 +307,5 @@ export default AdminBillBody;
 AdminBillBody.propTypes = {
   row: PropTypes.any.isRequired,
   index: PropTypes.number.isRequired,
-  labelId: PropTypes.string.isRequired
+  labelId: PropTypes.string.isRequired,
 };

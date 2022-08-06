@@ -1,4 +1,4 @@
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 function WithLabelExample(props) {
   // eslint-disable-next-line react/prop-types

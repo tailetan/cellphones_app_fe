@@ -1,8 +1,8 @@
-import ComputerTagData from '../../../../assets/data/computer-tag.json';
-import ComputerData from '../../../../assets/data/computer.json';
-import BoxTitle from '../../BoxTitle/BoxTitle.js';
-import CardProduct from '../../CardProduct/CardProduct.js';
-import BoxProduct from '../../BoxProduct/BoxProduct.js';
+import ComputerTagData from "../../../../assets/data/computer-tag.json";
+import ComputerData from "../../../../assets/data/computer.json";
+import BoxTitle from "../../BoxTitle/BoxTitle.js";
+import CardProduct from "../../CardProduct/CardProduct.js";
+import BoxProduct from "../../BoxProduct/BoxProduct.js";
 
 function Computer() {
   const computerTag = ComputerTagData.computer;

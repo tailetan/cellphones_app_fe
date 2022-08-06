@@ -1,13 +1,13 @@
-import * as React from 'react';
+import * as React from "react";
 
-import Box from '@mui/material/Box';
-import ForgotPassword from './ForgotPassword';
-import LoginForm from './LoginForm';
-import PropTypes from 'prop-types';
-import RegisterForm from './RegisterForm';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import ForgotPassword from "./ForgotPassword";
+import LoginForm from "./LoginForm";
+import PropTypes from "prop-types";
+import RegisterForm from "./RegisterForm";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import Typography from "@mui/material/Typography";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -18,7 +18,8 @@ function TabPanel(props) {
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
-      {...other}>
+      {...other}
+    >
       {value === index && (
         <Box sx={{ p: 3 }}>
           <Typography>{children}</Typography>
@@ -31,13 +32,13 @@ function TabPanel(props) {
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired
+  value: PropTypes.number.isRequired,
 };
 
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`
+    "aria-controls": `simple-tabpanel-${index}`,
   };
 }
 
@@ -59,7 +60,8 @@ function AuthenticateForm() {
         className="authenticate-tab"
         onChange={handleChange}
         aria-label="basic tabs example"
-        centered>
+        centered
+      >
         <Tab label="Quên mật khẩu" {...a11yProps(0)} />
         <Tab label="Đăng nhập" {...a11yProps(1)} />
         <Tab label="Đăng ký" {...a11yProps(2)} />

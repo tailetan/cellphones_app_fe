@@ -1,28 +1,28 @@
-import './brand.css';
-import BoxTitle from '../../BoxTitle/BoxTitle.js';
-import AppleBrand from '../../../../assets/images/banner-sis-apple-homepage.png';
-import SamsungBrand from '../../../../assets/images/banner-sis-samsung-homepage.png';
-import AsusBrand from '../../../../assets/images/banner-sis-asus-homepage.png';
-import XiaomiBrand from '../../../../assets/images/banner-sis-xiaomi-homepage.png';
+import "./brand.css";
+import BoxTitle from "../../BoxTitle/BoxTitle.js";
+import AppleBrand from "../../../../assets/images/banner-sis-apple-homepage.png";
+import SamsungBrand from "../../../../assets/images/banner-sis-samsung-homepage.png";
+import AsusBrand from "../../../../assets/images/banner-sis-asus-homepage.png";
+import XiaomiBrand from "../../../../assets/images/banner-sis-xiaomi-homepage.png";
 
 function Brand() {
   const imageArray = [
     {
       image: AppleBrand,
-      alt: 'Apple'
+      alt: "Apple",
     },
     {
       image: SamsungBrand,
-      alt: 'Samsung'
+      alt: "Samsung",
     },
     {
       image: AsusBrand,
-      alt: 'ASUS'
+      alt: "ASUS",
     },
     {
       image: XiaomiBrand,
-      alt: 'Xiaomi'
-    }
+      alt: "Xiaomi",
+    },
   ];
 
   return (

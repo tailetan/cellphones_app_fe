@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 
-import { FreeMode, Navigation, Thumbs } from 'swiper';
+import { FreeMode, Navigation, Thumbs } from "swiper";
 
 export default function Slider(props) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -15,15 +15,16 @@ export default function Slider(props) {
     <>
       <Swiper
         style={{
-          '--swiper-navigation-color': '#fff',
-          '--swiper-pagination-color': '#fff'
+          "--swiper-navigation-color": "#fff",
+          "--swiper-pagination-color": "#fff",
         }}
         loop={true}
         spaceBetween={10}
         navigation={false}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2">
+        className="mySwiper2"
+      >
         {props.images.length > 0 &&
           props.images.map((item, index) => (
             <SwiperSlide key={index}>
@@ -40,7 +41,8 @@ export default function Slider(props) {
         freeMode={false}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper">
+        className="mySwiper"
+      >
         {props.images.length > 0 &&
           props.images.map((item, index) => (
             <SwiperSlide key={index}>

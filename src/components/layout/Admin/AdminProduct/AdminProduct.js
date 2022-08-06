@@ -1,8 +1,8 @@
-import './adminproduct.css';
+import "./adminproduct.css";
 
-import * as React from 'react';
+import * as React from "react";
 
-import { Avatar, Chip } from '@mui/material';
+import { Avatar, Chip } from "@mui/material";
 import {
   changePage,
   setCurrentSearch,
@@ -14,18 +14,18 @@ import {
   setSearch,
   setSkeleton,
   setTo,
-  setTotalPage
-} from '../../../../redux/action';
+  setTotalPage,
+} from "../../../../redux/action";
 
-import AdminTable from '../AdminTable/AdminTable.js';
-import ProductTableHeading from '../../../../assets/data/admin-product-heading.json';
-import PropTypes from 'prop-types';
-import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import TextField from '@mui/material/TextField';
-import { connect } from 'react-redux';
-import { getAllProducts } from '../../../../api/AdminProducts.js';
-import { mapStateToProps } from '../../../../redux/useSelector.js';
+import AdminTable from "../AdminTable/AdminTable.js";
+import ProductTableHeading from "../../../../assets/data/admin-product-heading.json";
+import PropTypes from "prop-types";
+import RestartAltRoundedIcon from "@mui/icons-material/RestartAltRounded";
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import TextField from "@mui/material/TextField";
+import { connect } from "react-redux";
+import { getAllProducts } from "../../../../api/AdminProducts.js";
+import { mapStateToProps } from "../../../../redux/useSelector.js";
 
 class AdminProduct extends React.Component {
   constructor(props) {
@@ -57,16 +57,16 @@ class AdminProduct extends React.Component {
 
   handleDeleteSearch = () => {
     this.props.setSkeleton(true);
-    this.props.setSearch('');
-    this.props.setCurrentSearch('');
+    this.props.setSearch("");
+    this.props.setCurrentSearch("");
     this.getAllProductsData();
   };
 
   searchProduct = async () => {
     this.props.setSkeleton(true);
     this.props.setCurrentSearch(this.props.admin.search);
-    this.props.setFilterCategory('');
-    this.props.setFilterBrand('');
+    this.props.setFilterCategory("");
+    this.props.setFilterBrand("");
     getAllProducts({ search: this.props.admin.search }).then((result) => {
       const { current_page, data, from, to, last_page, per_page } = result;
       this.props.changePage(current_page);
@@ -80,8 +80,8 @@ class AdminProduct extends React.Component {
   };
 
   resetAll = async () => {
-    this.props.setFilterCategory('');
-    this.props.setFilterBrand('');
+    this.props.setFilterCategory("");
+    this.props.setFilterBrand("");
     this.handleDeleteSearch();
   };
 
@@ -99,15 +99,25 @@ class AdminProduct extends React.Component {
               placeholder="Tìm kiếm"
             />
             <Avatar
-              sx={{ bgcolor: 'red.main', cursor: 'pointer', marginLeft: '12px' }}
+              sx={{
+                bgcolor: "red.main",
+                cursor: "pointer",
+                marginLeft: "12px",
+              }}
               variant="rounded"
-              onClick={this.searchProduct}>
+              onClick={this.searchProduct}
+            >
               <SearchRoundedIcon />
             </Avatar>
             <Avatar
-              sx={{ bgcolor: 'red.main', cursor: 'pointer', marginLeft: '12px' }}
+              sx={{
+                bgcolor: "red.main",
+                cursor: "pointer",
+                marginLeft: "12px",
+              }}
               variant="rounded"
-              onClick={this.resetAll}>
+              onClick={this.resetAll}
+            >
               <RestartAltRoundedIcon />
             </Avatar>
           </div>
@@ -118,7 +128,7 @@ class AdminProduct extends React.Component {
               <p className="m-b-4 font-weight-bold">Từ khóa tìm kiếm</p>
               <Chip
                 label={this.props.admin.current_search}
-                sx={{ backgroundColor: 'blue.main', color: 'white.main' }}
+                sx={{ backgroundColor: "blue.main", color: "white.main" }}
               />
               <br />
             </>
@@ -142,7 +152,7 @@ const mapDispatchToProps = (dispatch) => {
     setSearch: (data) => dispatch(setSearch(data)),
     setCurrentSearch: (data) => dispatch(setCurrentSearch(data)),
     setFilterCategory: (data) => dispatch(setFilterCategory(data)),
-    setFilterBrand: (data) => dispatch(setFilterBrand(data))
+    setFilterBrand: (data) => dispatch(setFilterBrand(data)),
   };
 };
 
@@ -158,7 +168,7 @@ AdminProduct.propTypes = {
   setCurrentSearch: PropTypes.func,
   setFilterCategory: PropTypes.func,
   setFilterBrand: PropTypes.func,
-  admin: PropTypes.object
+  admin: PropTypes.object,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AdminProduct);

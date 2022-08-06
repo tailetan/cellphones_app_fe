@@ -1,31 +1,31 @@
-import * as React from 'react';
+import * as React from "react";
 
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Footer from '../../components/layout/Footer/Footer';
-import Header from '../../components/layout/Header/Header';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import Link from '@mui/material/Link';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import Phone from './Phone.js';
-import Theme from '../../components/layout/Themes/Themes';
-import { getAllProducts } from '../../api/AdminProducts';
-import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Footer from "../../components/layout/Footer/Footer";
+import Header from "../../components/layout/Header/Header";
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import Link from "@mui/material/Link";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import Phone from "./Phone.js";
+import Theme from "../../components/layout/Themes/Themes";
+import { getAllProducts } from "../../api/AdminProducts";
+import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
 
 function handleClick(event) {
   event.preventDefault();
-  console.info('You clicked a breadcrumb.');
+  console.info("You clicked a breadcrumb.");
 }
 
 function Shop() {
   const [data, setData] = React.useState([]);
-  const [cate, setCategory] = React.useState('');
-  const [displayCate, setDisplayCate] = React.useState('');
-  const [sort, setSort] = React.useState('');
-  const [brand, setBrand] = React.useState('');
+  const [cate, setCategory] = React.useState("");
+  const [displayCate, setDisplayCate] = React.useState("");
+  const [sort, setSort] = React.useState("");
+  const [brand, setBrand] = React.useState("");
   const [page, setPage] = React.useState(1);
   const [total_page, setTotalPage] = React.useState(0);
   const [loading, setLoading] = React.useState(true);
-  const [search, setSearch] = React.useState('');
+  const [search, setSearch] = React.useState("");
   const [scrollPosition, setScrollPosition] = React.useState(0);
   const handleScroll = () => {
     const position = window.pageYOffset;
@@ -34,30 +34,31 @@ function Shop() {
 
   React.useEffect(() => {
     getDataFromUrl();
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const handleSort = (value) => {
-    let url = search === '' ? `/shop?category=${cate}` : `/shop?search=${search}`;
+    let url =
+      search === "" ? `/shop?category=${cate}` : `/shop?search=${search}`;
 
     if (sort === value) {
-      setSort('');
+      setSort("");
     } else {
       setSort(value);
       url += `&price=${value}`;
     }
 
-    if (brand !== '' && search === '') {
+    if (brand !== "" && search === "") {
       url += `&brand=${brand}`;
     }
 
     setPage(1);
 
-    window.history.pushState('cellphoneS', 'Shop', url);
+    window.history.pushState("cellphoneS", "Shop", url);
 
     window.scrollTo(0, 0);
 
@@ -67,7 +68,7 @@ function Shop() {
   const goToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -75,19 +76,19 @@ function Shop() {
     let url = `/shop?category=${cate}`;
 
     if (brand === name) {
-      setBrand('');
+      setBrand("");
     } else {
       setBrand(name);
       url += `&brand=${name}`;
     }
 
-    if (sort !== '') {
+    if (sort !== "") {
       url += `&price=${sort}`;
     }
 
     setPage(1);
 
-    window.history.pushState('cellphoneS', 'Shop', url);
+    window.history.pushState("cellphoneS", "Shop", url);
 
     window.scrollTo(0, 0);
 
@@ -97,19 +98,20 @@ function Shop() {
   const onChangePage = (event, value) => {
     event.preventDefault();
 
-    let url = search === '' ? `/shop?category=${cate}` : `/shop?search=${search}`;
+    let url =
+      search === "" ? `/shop?category=${cate}` : `/shop?search=${search}`;
 
-    if (brand !== '' && search === '') {
+    if (brand !== "" && search === "") {
       url += `&brand=${brand}`;
     }
 
-    if (sort !== '') {
+    if (sort !== "") {
       url += `&price=${sort}`;
     }
 
     url += `&page=${value}`;
 
-    window.history.pushState('cellphoneS', 'Shop', url);
+    window.history.pushState("cellphoneS", "Shop", url);
 
     window.scrollTo(0, 0);
 
@@ -129,10 +131,10 @@ function Shop() {
 
     if (!params.search) {
       if (params.category) {
-        if (params.category === 'mobile') category = 'Điện Thoại';
-        if (params.category === 'laptop') category = 'Laptop';
-        if (params.category === 'tablet') category = 'Tablet';
-        if (params.category === 'accessory') category = 'Phụ kiện';
+        if (params.category === "mobile") category = "Điện Thoại";
+        if (params.category === "laptop") category = "Laptop";
+        if (params.category === "tablet") category = "Tablet";
+        if (params.category === "accessory") category = "Phụ kiện";
         setCategory(params.category);
         setDisplayCate(category);
       }
@@ -170,32 +172,45 @@ function Shop() {
       key="1"
       color="inherit"
       href="/"
-      onClick={handleClick}>
+      onClick={handleClick}
+    >
       <HomeRoundedIcon sx={{ mr: 0.5 }} fontSize="inherit" color="red" />
       Trang chủ
     </Link>,
-    <Link underline="none" key="2" className="font-12 text-black font-weight-semi" color="inherit">
-      {search === '' ? `${displayCate}` : 'Tìm kiếm'}
-    </Link>
+    <Link
+      underline="none"
+      key="2"
+      className="font-12 text-black font-weight-semi"
+      color="inherit"
+    >
+      {search === "" ? `${displayCate}` : "Tìm kiếm"}
+    </Link>,
   ];
 
   return (
     <Theme>
       <div>
         <Header />
-        <main style={{ paddingTop: '64px', position: 'relative' }}>
+        <main style={{ paddingTop: "64px", position: "relative" }}>
           <div
             className="p-2 shop-box-shadow"
-            style={{ position: 'sticky', top: '64px', background: '#ffffff', zIndex: 1000 }}>
+            style={{
+              position: "sticky",
+              top: "64px",
+              background: "#ffffff",
+              zIndex: 1000,
+            }}
+          >
             <div className="container p-x-0">
               <Breadcrumbs
                 separator={<NavigateNextIcon fontSize="small" />}
-                aria-label="breadcrumb">
+                aria-label="breadcrumb"
+              >
                 {breadcrumbs}
               </Breadcrumbs>
             </div>
           </div>
-          <div className="container" style={{ position: 'relative' }}>
+          <div className="container" style={{ position: "relative" }}>
             <div className="p-y-4">
               <Phone
                 data={data}
@@ -214,21 +229,22 @@ function Shop() {
               {scrollPosition > 0 && (
                 <button
                   style={{
-                    position: 'fixed',
-                    bottom: '110px',
-                    right: 'calc(50% - 600px)',
-                    borderRadius: '50%',
-                    border: '1px solid #ff0000',
-                    background: '#ff0000',
-                    color: '#ffffff',
-                    width: '38px',
-                    height: '38px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    zIndex: '1000'
+                    position: "fixed",
+                    bottom: "110px",
+                    right: "calc(50% - 600px)",
+                    borderRadius: "50%",
+                    border: "1px solid #ff0000",
+                    background: "#ff0000",
+                    color: "#ffffff",
+                    width: "38px",
+                    height: "38px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    zIndex: "1000",
                   }}
-                  onClick={() => goToTop()}>
+                  onClick={() => goToTop()}
+                >
                   <KeyboardArrowUpRoundedIcon />
                 </button>
               )}

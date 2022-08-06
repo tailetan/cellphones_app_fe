@@ -1,9 +1,9 @@
-import './hero.css';
+import "./hero.css";
 
-import Advertisement from '../Advertisement/Advertisement.js';
-import Menu from '../../Menu/Menu.js';
-import MenuData from '../../../../assets/data/menu.json';
-import Swiper from '../Swiper/Swiper.js';
+import Advertisement from "../Advertisement/Advertisement.js";
+import Menu from "../../Menu/Menu.js";
+import MenuData from "../../../../assets/data/menu.json";
+import Swiper from "../Swiper/Swiper.js";
 
 function Hero() {
   const menuData = MenuData.menu;

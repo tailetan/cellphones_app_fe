@@ -6,168 +6,168 @@ const initState = {
     to: 0,
     per_page: 15,
     skeleton: true,
-    search: '',
-    current_search: '',
-    filter_category: '',
-    filter_brand: '',
-    filter_sort: '',
-    filter_status: '',
-    current_description: '',
+    search: "",
+    current_search: "",
+    filter_category: "",
+    filter_brand: "",
+    filter_sort: "",
+    filter_status: "",
+    current_description: "",
     navigation_add: false,
     totalCart: 0,
     data: [],
-    userId: ''
-  }
+    userId: "",
+  },
 };
 
 const rootReducer = (state = initState, action) => {
   switch (action.type) {
-    case 'setUserId': {
+    case "setUserId": {
       return {
         ...state,
         admin: {
           ...state.admin,
-          userId: action.payload
-        }
+          userId: action.payload,
+        },
       };
     }
-    case 'setTotalCart': {
+    case "setTotalCart": {
       return {
         ...state,
         admin: {
           ...state.admin,
-          totalCart: action.payload
-        }
+          totalCart: action.payload,
+        },
       };
     }
-    case 'setAddNavigation': {
+    case "setAddNavigation": {
       return {
         ...state,
         admin: {
           ...state.admin,
-          navigation_add: action.payload
-        }
+          navigation_add: action.payload,
+        },
       };
     }
-    case 'setCurrentDescription': {
+    case "setCurrentDescription": {
       return {
         ...state,
         admin: {
           ...state.admin,
-          current_description: action.payload
-        }
+          current_description: action.payload,
+        },
       };
     }
-    case 'setFilterBrand': {
+    case "setFilterBrand": {
       return {
         ...state,
         admin: {
           ...state.admin,
-          filter_brand: action.payload
-        }
+          filter_brand: action.payload,
+        },
       };
     }
-    case 'setFilterCategory': {
+    case "setFilterCategory": {
       return {
         ...state,
         admin: {
           ...state.admin,
-          filter_category: action.payload
-        }
+          filter_category: action.payload,
+        },
       };
     }
-    case 'setFilterSort': {
+    case "setFilterSort": {
       return {
         ...state,
         admin: {
           ...state.admin,
-          filter_sort: action.payload
-        }
+          filter_sort: action.payload,
+        },
       };
     }
-    case 'setFilterStatus': {
+    case "setFilterStatus": {
       return {
         ...state,
         admin: {
           ...state.admin,
-          filter_status: action.payload
-        }
+          filter_status: action.payload,
+        },
       };
     }
-    case 'setSearch': {
+    case "setSearch": {
       return {
         ...state,
         admin: {
           ...state.admin,
-          search: action.payload
-        }
+          search: action.payload,
+        },
       };
     }
-    case 'setCurrentSearch': {
+    case "setCurrentSearch": {
       return {
         ...state,
         admin: {
           ...state.admin,
-          current_search: action.payload
-        }
+          current_search: action.payload,
+        },
       };
     }
-    case 'setSkeleton': {
+    case "setSkeleton": {
       return {
         ...state,
         admin: {
           ...state.admin,
-          skeleton: action.payload
-        }
+          skeleton: action.payload,
+        },
       };
     }
-    case 'setData':
+    case "setData":
       return {
         ...state,
         admin: {
           ...state.admin,
-          data: [...action.payload]
-        }
+          data: [...action.payload],
+        },
       };
-    case 'changePage':
+    case "changePage":
       return {
         ...state,
         admin: {
           ...state.admin,
-          current_page: action.payload
-        }
+          current_page: action.payload,
+        },
       };
-    case 'setTotalPage':
+    case "setTotalPage":
       return {
         ...state,
         admin: {
           ...state.admin,
-          total: action.payload
-        }
+          total: action.payload,
+        },
       };
-    case 'setFrom':
+    case "setFrom":
       return {
         ...state,
         admin: {
           ...state.admin,
-          from: action.payload
-        }
+          from: action.payload,
+        },
       };
-    case 'setTo':
+    case "setTo":
       return {
         ...state,
         admin: {
           ...state.admin,
-          to: action.payload
-        }
+          to: action.payload,
+        },
       };
-    case 'setPerPage':
+    case "setPerPage":
       return {
         ...state,
         admin: {
           ...state.admin,
-          per_page: action.payload
-        }
+          per_page: action.payload,
+        },
       };
     default:
       return state;

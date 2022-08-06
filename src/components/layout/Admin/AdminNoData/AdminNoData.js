@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from "react";
 
-import NoData from '../../../../assets/images/no_data.png';
-import PropTypes from 'prop-types';
+import NoData from "../../../../assets/images/no_data.png";
+import PropTypes from "prop-types";
 
 class AdminNoData extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class AdminNoData extends React.Component {
       <div className="d-flex flex-column justify-center align-center">
         <img
           src={NoData}
-          width={this.props.isAdmin === 'false' ? '60%' : '30%'}
+          width={this.props.isAdmin === "false" ? "60%" : "30%"}
           height="100%"
           alt="No Data Found"
         />
@@ -24,7 +24,7 @@ class AdminNoData extends React.Component {
 }
 
 AdminNoData.propTypes = {
-  isAdmin: PropTypes.any
+  isAdmin: PropTypes.any,
 };
 
 export default AdminNoData;

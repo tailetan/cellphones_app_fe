@@ -1,35 +1,35 @@
-import './header.css';
+import "./header.css";
 
-import * as style from '@dicebear/micah';
+import * as style from "@dicebear/micah";
 
-import { Form, InputGroup } from 'react-bootstrap';
-import React, { useEffect } from 'react';
+import { Form, InputGroup } from "react-bootstrap";
+import React, { useEffect } from "react";
 
-import Account from '../../../assets/images/account.svg';
-import Avatar from '@mui/material/Avatar';
-import { Button } from '@mui/material';
-import Cart from '../../../assets/images/cart.svg';
-import { FaSearch } from 'react-icons/fa';
-import Location from '../../../assets/images/information-location.svg';
-import Logo from '../../../assets/images/logo.svg';
-import Menu from '@mui/material/Menu';
-import MenuData from '../../../assets/data/menu.json';
-import MenuItemData from '../Menu/Menu';
-import MenuSVG from '../../../assets/images/menu.svg';
-import OrderSearch from '../../../assets/images/information-order-detail.svg';
-import Phone from '../../../assets/images/information-phone.svg';
-import axios from 'axios';
-import { createAvatar } from '@dicebear/avatars';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { setTotalCart, setUserId } from '../../../redux/action';
+import Account from "../../../assets/images/account.svg";
+import Avatar from "@mui/material/Avatar";
+import { Button } from "@mui/material";
+import Cart from "../../../assets/images/cart.svg";
+import { FaSearch } from "react-icons/fa";
+import Location from "../../../assets/images/information-location.svg";
+import Logo from "../../../assets/images/logo.svg";
+import Menu from "@mui/material/Menu";
+import MenuData from "../../../assets/data/menu.json";
+import MenuItemData from "../Menu/Menu";
+import MenuSVG from "../../../assets/images/menu.svg";
+import OrderSearch from "../../../assets/images/information-order-detail.svg";
+import Phone from "../../../assets/images/information-phone.svg";
+import axios from "axios";
+import { createAvatar } from "@dicebear/avatars";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setTotalCart, setUserId } from "../../../redux/action";
 
 function Header() {
   const total = useSelector((state) => state.admin.totalCart);
   const dispatch = useDispatch();
   const [active, setActive] = React.useState(false);
-  const [search, setSearch] = React.useState('');
-  const [user, setUser] = React.useState('');
+  const [search, setSearch] = React.useState("");
+  const [user, setUser] = React.useState("");
   const menuData = MenuData.menu;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -41,13 +41,13 @@ function Header() {
   };
 
   const handleSearch = () => {
-    if (search !== '') {
+    if (search !== "") {
       window.location.href = `/shop?search=${search}`;
     }
   };
 
   const handleCart = () => {
-    const cart = localStorage.getItem('cart');
+    const cart = localStorage.getItem("cart");
     if (cart) {
       const initialValue = 0;
       const sumWithInitial = JSON.parse(cart).reduce(
@@ -62,19 +62,19 @@ function Header() {
 
   useEffect(async () => {
     handleCart();
-    const user_token = localStorage.getItem('user_login_token');
+    const user_token = localStorage.getItem("user_login_token");
     if (user_token) {
-      const result = await axios.get('/me', {
+      const result = await axios.get("/me", {
         headers: {
-          Authorization: `Bearer ${user_token}`
-        }
+          Authorization: `Bearer ${user_token}`,
+        },
       });
       if (result.status === 200) {
         const random = (Math.random() + 1).toString(36).substring(7);
         const svg = createAvatar(style, {
           seed: random,
           dataUri: true,
-          baseColor: ['mellow']
+          baseColor: ["mellow"],
         });
         const user = result.data;
         user.avatar = svg;
@@ -87,15 +87,15 @@ function Header() {
 
   const logout = async () => {
     await axios.post(
-      '/logout',
+      "/logout",
       {},
       {
         headers: {
-          Authorization: `Bearer ${user.token}`
-        }
+          Authorization: `Bearer ${user.token}`,
+        },
       }
     );
-    localStorage.removeItem('user_login_token');
+    localStorage.removeItem("user_login_token");
     window.location.reload();
   };
 
@@ -108,18 +108,29 @@ function Header() {
               <div className="d-flex align-items-center">
                 <div className="logo">
                   <a href="/" title="CellphoneS - Hệ thống bán lẻ điện thoại">
-                    <img src={Logo} alt="Cellphones" width="100%" height="100%" />
+                    <img
+                      src={Logo}
+                      alt="Cellphones"
+                      width="100%"
+                      height="100%"
+                    />
                   </a>
                 </div>
-                <a className="i-menu d-flex align-center" onClick={() => setActive(!active)}>
+                <a
+                  className="i-menu d-flex align-center"
+                  onClick={() => setActive(!active)}
+                >
                   <img src={MenuSVG} alt="Phone" width="20px" height="20px" />
                   <div className="text-white m-l-2 font-12">
                     <p>Danh mục</p>
                   </div>
                 </a>
               </div>
-              <InputGroup className="ml-3" style={{ width: '360px' }}>
-                <InputGroup.Text id="basic-addon1" onClick={() => handleSearch()}>
+              <InputGroup className="ml-3" style={{ width: "360px" }}>
+                <InputGroup.Text
+                  id="basic-addon1"
+                  onClick={() => handleSearch()}
+                >
                   <FaSearch />
                 </InputGroup.Text>
                 <Form.Control
@@ -129,7 +140,7 @@ function Header() {
                   aria-label="Tìm kiếm"
                   aria-describedby="basic-addon1"
                   onKeyPress={(event) => {
-                    if (event.key === 'Enter') {
+                    if (event.key === "Enter") {
                       handleSearch();
                     }
                   }}
@@ -150,7 +161,12 @@ function Header() {
                 </a>
                 <a className="i-item d-flex align-center">
                   <div className="m-r-2">
-                    <img src={Location} alt="Location" width="25px" height="25px" />
+                    <img
+                      src={Location}
+                      alt="Location"
+                      width="25px"
+                      height="25px"
+                    />
                   </div>
                   <div className="text-white font-12 line-height-1-2">
                     <p>
@@ -162,7 +178,12 @@ function Header() {
                 </a>
                 <a className="i-item d-flex align-center">
                   <div className="m-r-2">
-                    <img src={OrderSearch} alt="OrderSearch" width="100%" height="24px" />
+                    <img
+                      src={OrderSearch}
+                      alt="OrderSearch"
+                      width="100%"
+                      height="24px"
+                    />
                   </div>
                   <div className="text-white font-12 line-height-1-2">
                     <p>
@@ -184,28 +205,34 @@ function Header() {
                     </a>
                   </div>
                 </a>
-                {user === '' && (
+                {user === "" && (
                   <a
                     href="/smember"
-                    className="i-item i-item-account d-flex flex-column align-center">
+                    className="i-item i-item-account d-flex flex-column align-center"
+                  >
                     <div>
-                      <img src={Account} alt="Account" width="20px" height="100%" />
+                      <img
+                        src={Account}
+                        alt="Account"
+                        width="20px"
+                        height="100%"
+                      />
                     </div>
                     <div className="text-white font-12 line-height-1-2">
                       <p>Smember</p>
                     </div>
                   </a>
                 )}
-                {user !== '' && (
+                {user !== "" && (
                   <>
                     <Avatar
-                      sx={{ bgcolor: '#ffffff' }}
+                      sx={{ bgcolor: "#ffffff" }}
                       alt={`${user.first_name} ${user.last_name}`}
                       src={user.avatar}
                       id="basic-button"
-                      aria-controls={open ? 'basic-menu' : undefined}
+                      aria-controls={open ? "basic-menu" : undefined}
                       aria-haspopup="true"
-                      aria-expanded={open ? 'true' : undefined}
+                      aria-expanded={open ? "true" : undefined}
                       onClick={handleClick}
                     />
                     <Menu
@@ -214,8 +241,9 @@ function Header() {
                       open={open}
                       onClose={handleClose}
                       MenuListProps={{
-                        'aria-labelledby': 'basic-button'
-                      }}>
+                        "aria-labelledby": "basic-button",
+                      }}
+                    >
                       <div className="p-3 text-center">
                         <p className="font-weight-bold">
                           {user.last_name}&nbsp;{user.first_name}
@@ -224,14 +252,18 @@ function Header() {
                         <Button
                           onClick={logout}
                           sx={[
-                            { backgroundColor: 'red.main', color: 'white.main' },
                             {
-                              '&:hover': {
-                                backgroundColor: 'red.main',
-                                color: 'white.main'
-                              }
-                            }
-                          ]}>
+                              backgroundColor: "red.main",
+                              color: "white.main",
+                            },
+                            {
+                              "&:hover": {
+                                backgroundColor: "red.main",
+                                color: "white.main",
+                              },
+                            },
+                          ]}
+                        >
                           Đăng xuất
                         </Button>
                       </div>
@@ -244,10 +276,11 @@ function Header() {
         </nav>
       </header>
       <div
-        className={`global-header-overlay ${active ? 'active' : ''}`}
+        className={`global-header-overlay ${active ? "active" : ""}`}
         onClick={() => {
           setActive(false);
-        }}>
+        }}
+      >
         <div className="global-header-menu">
           <div className="ghm-box-list-menu">
             <MenuItemData menu={menuData} />

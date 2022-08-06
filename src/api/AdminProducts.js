@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const getAllProducts = async ({
   paginate,
@@ -7,10 +7,10 @@ export const getAllProducts = async ({
   category,
   brand,
   sort,
-  date
+  date,
 } = {}) => {
   const queryStringArray = [];
-  let url = '/products';
+  let url = "/products";
   let data = {};
 
   if (paginate) {
@@ -42,7 +42,10 @@ export const getAllProducts = async ({
   }
 
   for (const index in queryStringArray) {
-    url += index === '0' ? `?${queryStringArray[index]}` : `&${queryStringArray[index]}`;
+    url +=
+      index === "0"
+        ? `?${queryStringArray[index]}`
+        : `&${queryStringArray[index]}`;
   }
 
   await axios
@@ -51,7 +54,7 @@ export const getAllProducts = async ({
       data = { ...result.data };
     })
     .catch((error) => {
-      console.log('There was an error!', error);
+      console.log("There was an error!", error);
     });
 
   return data;
@@ -62,17 +65,17 @@ export const createProduct = async (body) => {
 
   let config = {
     headers: {
-      Authorization: 'Bearer ' + localStorage.getItem('token')
-    }
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
   };
 
   await axios
-    .post('/product/create', body, config)
+    .post("/product/create", body, config)
     .then((result) => {
       data = { ...result.data };
     })
     .catch((error) => {
-      console.log('There was an error!', error);
+      console.log("There was an error!", error);
     });
 
   return data;
@@ -83,8 +86,8 @@ export const deleteProduct = async (id) => {
 
   let config = {
     headers: {
-      Authorization: 'Bearer ' + localStorage.getItem('token')
-    }
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
   };
 
   await axios
@@ -93,7 +96,7 @@ export const deleteProduct = async (id) => {
       data = { ...result.data };
     })
     .catch((error) => {
-      console.log('There was an error!', error);
+      console.log("There was an error!", error);
     });
 
   return data;
@@ -104,8 +107,8 @@ export const getProductById = async (id) => {
 
   let config = {
     headers: {
-      Authorization: 'Bearer ' + localStorage.getItem('token')
-    }
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
   };
 
   await axios
@@ -114,7 +117,7 @@ export const getProductById = async (id) => {
       data = { ...result.data };
     })
     .catch((error) => {
-      console.log('There was an error!', error);
+      console.log("There was an error!", error);
     });
 
   return data;
@@ -125,8 +128,8 @@ export const updateProduct = async (id, body) => {
 
   const config = {
     headers: {
-      Authorization: `Bearer ${localStorage.getItem('token')}`
-    }
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
   };
 
   await axios
@@ -135,7 +138,7 @@ export const updateProduct = async (id, body) => {
       data = { ...result.data };
     })
     .catch((error) => {
-      console.log('There was an error!', error);
+      console.log("There was an error!", error);
     });
 
   return data;

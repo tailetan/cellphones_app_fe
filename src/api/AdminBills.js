@@ -1,8 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const getAllBills = async ({ paginate, page, status, sort } = {}) => {
   let queryStringArray = [];
-  let url = '/orders';
+  let url = "/orders";
   let data = {};
 
   if (paginate) {
@@ -22,13 +22,16 @@ export const getAllBills = async ({ paginate, page, status, sort } = {}) => {
   }
 
   for (const index in queryStringArray) {
-    url += index === '0' ? `?${queryStringArray[index]}` : `&${queryStringArray[index]}`;
+    url +=
+      index === "0"
+        ? `?${queryStringArray[index]}`
+        : `&${queryStringArray[index]}`;
   }
 
   const config = {
     headers: {
-      Authorization: `Bearer ${localStorage.getItem('token')}`
-    }
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
   };
 
   await axios
@@ -37,7 +40,7 @@ export const getAllBills = async ({ paginate, page, status, sort } = {}) => {
       data = { ...result.data };
     })
     .catch((error) => {
-      console.log('There was an error!', error);
+      console.log("There was an error!", error);
     });
 
   return data;
@@ -48,8 +51,8 @@ export const deleteBill = async (id) => {
 
   let config = {
     headers: {
-      Authorization: 'Bearer ' + localStorage.getItem('token')
-    }
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
   };
 
   await axios
@@ -58,7 +61,7 @@ export const deleteBill = async (id) => {
       data = { ...result.data };
     })
     .catch((error) => {
-      console.log('There was an error!', error);
+      console.log("There was an error!", error);
     });
 
   return data;

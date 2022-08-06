@@ -1,14 +1,14 @@
-import * as React from 'react';
+import * as React from "react";
 
-import AdminBillBody from '../AdminBillBody/AdminBillBody.js';
-import AdminProductBody from '../AdminProductBody/AdminProductBody.js';
-import AdminUsersBody from '../AdminUsersBody/AdminUsersBody.js';
-import PropTypes from 'prop-types';
-import StyledTableRow from '../../Custom/TableRow.js';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableRow from '@mui/material/TableRow';
-import { useLocation } from 'react-router-dom';
+import AdminBillBody from "../AdminBillBody/AdminBillBody.js";
+import AdminProductBody from "../AdminProductBody/AdminProductBody.js";
+import AdminUsersBody from "../AdminUsersBody/AdminUsersBody.js";
+import PropTypes from "prop-types";
+import StyledTableRow from "../../Custom/TableRow.js";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
+import { useLocation } from "react-router-dom";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -21,7 +21,7 @@ function descendingComparator(a, b, orderBy) {
 }
 
 function getComparator(order, orderBy) {
-  return order === 'desc'
+  return order === "desc"
     ? (a, b) => descendingComparator(a, b, orderBy)
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
@@ -46,7 +46,8 @@ function AdminTableBody(props) {
   const [pathName] = React.useState(useLocation().pathname);
 
   // Avoid a layout jump when reaching the last page with empty rows.
-  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+  const emptyRows =
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   const editItem = (data) => {
     props.editItem(data);
@@ -63,13 +64,18 @@ function AdminTableBody(props) {
 
           return (
             <StyledTableRow role="checkbox" tabIndex={-1} key={row.id}>
-              {pathName === '/admin/products' && (
-                <AdminProductBody row={row} index={index} labelId={labelId} editItem={editItem} />
+              {pathName === "/admin/products" && (
+                <AdminProductBody
+                  row={row}
+                  index={index}
+                  labelId={labelId}
+                  editItem={editItem}
+                />
               )}
-              {pathName === '/admin/bills' && (
+              {pathName === "/admin/bills" && (
                 <AdminBillBody row={row} index={index} labelId={labelId} />
               )}
-              {pathName === '/admin/users' && (
+              {pathName === "/admin/users" && (
                 <AdminUsersBody row={row} index={index} labelId={labelId} />
               )}
             </StyledTableRow>
@@ -78,8 +84,9 @@ function AdminTableBody(props) {
       {emptyRows > 0 && (
         <TableRow
           style={{
-            height: 55 * emptyRows
-          }}>
+            height: 55 * emptyRows,
+          }}
+        >
           <TableCell colSpan={6} />
         </TableRow>
       )}
@@ -95,5 +102,5 @@ AdminTableBody.propTypes = {
   page: PropTypes.number.isRequired,
   rowsPerPage: PropTypes.number.isRequired,
   rows: PropTypes.array.isRequired,
-  editItem: PropTypes.func.isRequired
+  editItem: PropTypes.func.isRequired,
 };

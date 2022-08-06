@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { Avatar, Chip, TextField } from '@mui/material';
+import { Avatar, Chip, TextField } from "@mui/material";
 import {
   changePage,
   setCurrentSearch,
@@ -13,17 +13,17 @@ import {
   setSearch,
   setSkeleton,
   setTo,
-  setTotalPage
-} from '../../../../redux/action';
+  setTotalPage,
+} from "../../../../redux/action";
 
-import AdminTable from '../AdminTable/AdminTable.js';
-import PropTypes from 'prop-types';
-import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import UserTableHeading from '../../../../assets/data/user-table-heading.json';
-import { connect } from 'react-redux';
-import { getAllUsers } from '../../../../api/AdminUser';
-import { mapStateToProps } from '../../../../redux/useSelector.js';
+import AdminTable from "../AdminTable/AdminTable.js";
+import PropTypes from "prop-types";
+import RestartAltRoundedIcon from "@mui/icons-material/RestartAltRounded";
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import UserTableHeading from "../../../../assets/data/user-table-heading.json";
+import { connect } from "react-redux";
+import { getAllUsers } from "../../../../api/AdminUser";
+import { mapStateToProps } from "../../../../redux/useSelector.js";
 
 class AdminUser extends React.Component {
   constructor(props) {
@@ -55,16 +55,16 @@ class AdminUser extends React.Component {
 
   handleDeleteSearch = () => {
     this.props.setSkeleton(true);
-    this.props.setSearch('');
-    this.props.setCurrentSearch('');
+    this.props.setSearch("");
+    this.props.setCurrentSearch("");
     this.getAllUsers();
   };
 
   searchUser = async () => {
     this.props.setSkeleton(true);
     this.props.setCurrentSearch(this.props.admin.search);
-    this.props.setFilterCategory('');
-    this.props.setFilterBrand('');
+    this.props.setFilterCategory("");
+    this.props.setFilterBrand("");
     getAllUsers({ search: this.props.admin.search }).then((result) => {
       const { current_page, data, from, to, last_page, per_page } = result;
       this.props.changePage(current_page);
@@ -78,7 +78,7 @@ class AdminUser extends React.Component {
   };
 
   resetAll = async () => {
-    this.props.setFilterSort('');
+    this.props.setFilterSort("");
     this.handleDeleteSearch();
   };
 
@@ -96,15 +96,25 @@ class AdminUser extends React.Component {
               placeholder="Tìm kiếm"
             />
             <Avatar
-              sx={{ bgcolor: 'red.main', cursor: 'pointer', marginLeft: '12px' }}
+              sx={{
+                bgcolor: "red.main",
+                cursor: "pointer",
+                marginLeft: "12px",
+              }}
               variant="rounded"
-              onClick={this.searchUser}>
+              onClick={this.searchUser}
+            >
               <SearchRoundedIcon />
             </Avatar>
             <Avatar
-              sx={{ bgcolor: 'red.main', cursor: 'pointer', marginLeft: '12px' }}
+              sx={{
+                bgcolor: "red.main",
+                cursor: "pointer",
+                marginLeft: "12px",
+              }}
               variant="rounded"
-              onClick={this.resetAll}>
+              onClick={this.resetAll}
+            >
               <RestartAltRoundedIcon />
             </Avatar>
           </div>
@@ -115,7 +125,7 @@ class AdminUser extends React.Component {
               <p className="m-b-4 font-weight-bold">Từ khóa tìm kiếm</p>
               <Chip
                 label={this.props.admin.current_search}
-                sx={{ backgroundColor: 'blue.main', color: 'white.main' }}
+                sx={{ backgroundColor: "blue.main", color: "white.main" }}
               />
               <br />
             </>
@@ -140,7 +150,7 @@ const mapDispatchToProps = (dispatch) => {
     setCurrentSearch: (data) => dispatch(setCurrentSearch(data)),
     setFilterCategory: (data) => dispatch(setFilterCategory(data)),
     setFilterBrand: (data) => dispatch(setFilterBrand(data)),
-    setFilterSort: (data) => dispatch(setFilterSort(data))
+    setFilterSort: (data) => dispatch(setFilterSort(data)),
   };
 };
 
@@ -157,7 +167,7 @@ AdminUser.propTypes = {
   setFilterCategory: PropTypes.func,
   setFilterBrand: PropTypes.func,
   admin: PropTypes.object,
-  setFilterSort: PropTypes.func
+  setFilterSort: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AdminUser);

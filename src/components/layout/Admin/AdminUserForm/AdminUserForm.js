@@ -167,7 +167,7 @@ function AdminUserForm(props) {
     let result;
     if (!isEdit) {
       result = await axios.post(
-        `https://d731-42-115-169-248.ap.ngrok.io/api/user/${action}`,
+        `http://localhost:8000/api/user/${action}`,
         body,
         {
           headers: {
@@ -179,7 +179,7 @@ function AdminUserForm(props) {
       );
     } else {
       result = await axios.put(
-        `https://d731-42-115-169-248.ap.ngrok.io/api/user/${action}`,
+        `http://localhost:8000/api/user/${action}`,
         body,
         {
           headers: {

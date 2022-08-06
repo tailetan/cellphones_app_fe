@@ -64,16 +64,13 @@ function Header() {
     handleCart();
     const user_token = localStorage.getItem("user_login_token");
     if (user_token) {
-      const result = await axios.get(
-        "https://d731-42-115-169-248.ap.ngrok.io/api/me",
-        {
-          headers: {
-            Authorization: `Bearer ${user_token}`,
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-          },
-        }
-      );
+      const result = await axios.get("http://localhost:8000/api/me", {
+        headers: {
+          Authorization: `Bearer ${user_token}`,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      });
       if (result.status === 200) {
         const random = (Math.random() + 1).toString(36).substring(7);
         const svg = createAvatar(style, {
@@ -92,7 +89,7 @@ function Header() {
 
   const logout = async () => {
     await axios.post(
-      "https://d731-42-115-169-248.ap.ngrok.io/api/logout",
+      "http://localhost:8000/api/logout",
       {},
       {
         headers: {

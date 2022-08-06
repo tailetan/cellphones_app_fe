@@ -55,7 +55,7 @@ function AdminLogin() {
 
   const callLogin = async () => {
     Notiflix.Block.pulse("#admin-login-form", "Đang đăng nhập vui lòng đợi");
-    const url = "https://d731-42-115-169-248.ap.ngrok.io/api/login";
+    const url = "http://localhost:8000/api/login";
     const body = { email: values.email, password: values.password };
     try {
       const result = await axios.post(url, body, {

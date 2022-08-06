@@ -131,7 +131,7 @@ function Cart() {
         cart: cartSend,
       };
       const result = await axios.post(
-        "https://d731-42-115-169-248.ap.ngrok.io/api/orders",
+        "http://localhost:8000/api/orders",
         body,
         {
           headers: {

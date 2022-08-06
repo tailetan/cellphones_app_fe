@@ -14,8 +14,7 @@ class Phone extends React.Component {
   };
 
   componentDidMount() {
-    const url =
-      "https://d731-42-115-169-248.ap.ngrok.io/api/getRecommendedPhones";
+    const url = "http://localhost:8000/api/getRecommendedPhones";
     axios
       .get(url, {
         headers: {

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getAllBills = async ({ paginate, page, status, sort } = {}) => {
   let queryStringArray = [];
-  let url = "https://d731-42-115-169-248.ap.ngrok.io/api/orders";
+  let url = "http://localhost:8000/api/orders";
   let data = {};
 
   if (paginate) {
@@ -60,10 +60,7 @@ export const deleteBill = async (id) => {
   };
 
   await axios
-    .delete(
-      `https://d731-42-115-169-248.ap.ngrok.io/api/orders/delete/${id}`,
-      config
-    )
+    .delete(`http://localhost:8000/api/orders/delete/${id}`, config)
     .then((result) => {
       data = { ...result.data };
     })

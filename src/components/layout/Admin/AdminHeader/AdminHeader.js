@@ -32,16 +32,13 @@ function Header() {
 
   const checkLogin = async () => {
     if (localStorage.getItem("token")) {
-      const response = await axios.get(
-        "https://d731-42-115-169-248.ap.ngrok.io/api/me",
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-          },
-        }
-      );
+      const response = await axios.get("http://localhost:8000/api/me", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      });
       const { data } = response;
       setUser(data);
     }
@@ -49,7 +46,7 @@ function Header() {
 
   const logout = async () => {
     await axios.post(
-      "https://d731-42-115-169-248.ap.ngrok.io/api/logout",
+      "http://localhost:8000/api/logout",
       {},
       {
         headers: {

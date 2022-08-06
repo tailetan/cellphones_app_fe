@@ -38,16 +38,12 @@ function ForgotPassword({ changeToLoginForm }) {
   });
   const onSubmit = async (data) => {
     try {
-      await axios.post(
-        "https://d731-42-115-169-248.ap.ngrok.io/api/forget-password",
-        data,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-          },
-        }
-      );
+      await axios.post("http://localhost:8000/api/forget-password", data, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      });
       Toast.fire({
         icon: "success",
         title: "Vui lòng kiểm tra email và làm theo hướng dẫn!",

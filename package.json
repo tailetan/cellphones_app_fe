@@ -88,5 +88,5 @@
     "eslint-plugin-react": "^7.29.4",
     "prettier": "^2.6.2"
   },
-  "proxy": "http://localhost:8000/api"
+  "proxy": "https://d731-42-115-169-248.ap.ngrok.io/api"
 }

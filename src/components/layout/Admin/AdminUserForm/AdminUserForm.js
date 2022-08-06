@@ -169,12 +169,16 @@ function AdminUserForm(props) {
       result = await axios.post(`/user/${action}`, body, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
         },
       });
     } else {
       result = await axios.put(`/user/${action}`, body, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
         },
       });
     }

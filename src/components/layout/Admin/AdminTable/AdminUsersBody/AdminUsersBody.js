@@ -50,6 +50,8 @@ function AdminUsersBody(props) {
     const result = await axios.get(`/users/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       },
     });
     setDetailUser(result.data);

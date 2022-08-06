@@ -67,6 +67,8 @@ function Header() {
       const result = await axios.get("/me", {
         headers: {
           Authorization: `Bearer ${user_token}`,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
         },
       });
       if (result.status === 200) {
@@ -92,6 +94,8 @@ function Header() {
       {
         headers: {
           Authorization: `Bearer ${user.token}`,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
         },
       }
     );

@@ -39,7 +39,12 @@ function LoginForm() {
   });
   const onSubmit = async (data) => {
     try {
-      const result = await axios.post("/login", data);
+      const result = await axios.post("/login", data, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      });
       const { token } = result.data;
       localStorage.setItem("user_login_token", token);
       Toast.fire({

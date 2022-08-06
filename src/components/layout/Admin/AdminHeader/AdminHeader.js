@@ -35,6 +35,8 @@ function Header() {
       const response = await axios.get("/me", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
         },
       });
       const { data } = response;
@@ -49,6 +51,8 @@ function Header() {
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
         },
       }
     );

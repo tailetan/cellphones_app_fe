@@ -31,6 +31,8 @@ export const getAllBills = async ({ paginate, page, status, sort } = {}) => {
   const config = {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
     },
   };
 
@@ -52,6 +54,8 @@ export const deleteBill = async (id) => {
   let config = {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("token"),
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
     },
   };
 

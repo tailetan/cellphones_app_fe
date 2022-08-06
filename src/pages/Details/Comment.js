@@ -113,7 +113,12 @@ export default function Comment(props) {
     };
 
     try {
-      await axios.post(url, body);
+      await axios.post(url, body, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      });
       Toast.fire({
         icon: "success",
         title: "Đánh giá thành công!",

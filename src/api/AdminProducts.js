@@ -49,7 +49,12 @@ export const getAllProducts = async ({
   }
 
   await axios
-    .get(url)
+    .get(url, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+      },
+    })
     .then((result) => {
       data = { ...result.data };
     })
@@ -66,6 +71,8 @@ export const createProduct = async (body) => {
   let config = {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("token"),
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
     },
   };
 
@@ -87,6 +94,8 @@ export const deleteProduct = async (id) => {
   let config = {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("token"),
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
     },
   };
 
@@ -108,6 +117,8 @@ export const getProductById = async (id) => {
   let config = {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("token"),
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
     },
   };
 
@@ -129,6 +140,8 @@ export const updateProduct = async (id, body) => {
   const config = {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
     },
   };
 

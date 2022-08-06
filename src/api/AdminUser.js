@@ -32,6 +32,8 @@ export const getAllUsers = async ({ paginate, page, sort, search } = {}) => {
     .get(url, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       },
     })
     .then((result) => {
@@ -50,6 +52,8 @@ export const deleteUser = async (id) => {
   const config = {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
     },
   };
 

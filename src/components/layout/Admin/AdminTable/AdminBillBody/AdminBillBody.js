@@ -61,6 +61,8 @@ function AdminBillBody(props) {
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
         },
       }
     );

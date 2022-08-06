@@ -13,9 +13,16 @@ class Laptop extends React.Component {
 
   componentDidMount() {
     const url = "/getRecommendedLaptops";
-    axios.get(url).then((result) => {
-      this.setState({ laptop: result.data });
-    });
+    axios
+      .get(url, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      })
+      .then((result) => {
+        this.setState({ laptop: result.data });
+      });
   }
 
   render() {

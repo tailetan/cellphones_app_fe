@@ -58,7 +58,12 @@ function AdminLogin() {
     const url = "/login";
     const body = { email: values.email, password: values.password };
     try {
-      const result = await axios.post(url, body);
+      const result = await axios.post(url, body, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      });
       const { data } = result;
       const { token } = data;
       localStorage.setItem("token", token);

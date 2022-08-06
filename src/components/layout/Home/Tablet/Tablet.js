@@ -13,9 +13,16 @@ class Tablet extends React.Component {
 
   componentDidMount() {
     const url = "/getRecommendedTablets";
-    axios.get(url).then((result) => {
-      this.setState({ tablet: result.data });
-    });
+    axios
+      .get(url, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      })
+      .then((result) => {
+        this.setState({ tablet: result.data });
+      });
   }
 
   render() {

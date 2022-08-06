@@ -38,7 +38,12 @@ function ForgotPassword({ changeToLoginForm }) {
   });
   const onSubmit = async (data) => {
     try {
-      await axios.post("/forget-password", data);
+      await axios.post("/forget-password", data, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      });
       Toast.fire({
         icon: "success",
         title: "Vui lòng kiểm tra email và làm theo hướng dẫn!",

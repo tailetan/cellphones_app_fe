@@ -1,7 +1,8 @@
 import "./adminuserform.css";
 
-import { Button, TextField } from "@mui/material";
+import { Button } from "@mui/material";
 import { Col, Form, Row } from "react-bootstrap";
+import { styled } from "@mui/material/styles";
 
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
@@ -14,6 +15,8 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import moment from "moment";
 import { useEffect } from "react";
+import InputBase from "@mui/material/InputBase";
+import { Box } from "@mui/material";
 
 const Toast = Swal.mixin({
   toast: true,
@@ -41,6 +44,26 @@ const genderList = [
   },
 ];
 
+const BootstrapInput = styled(InputBase)(({ theme }) => ({
+  "label + &": {
+    marginTop: 0,
+  },
+  "& .MuiInputBase-input": {
+    borderRadius: 4,
+    position: "relative",
+    backgroundColor: theme.palette.mode === "light" ? "#fcfcfb" : "#2b2b2b",
+    border: "none",
+    fontSize: 16,
+    width: "100%",
+    padding: "10px 12px",
+    transition: theme.transitions.create([
+      "border-color",
+      "background-color",
+      "box-shadow",
+    ]),
+  },
+}));
+
 function AdminUserForm(props) {
   const [first_name, setFirstName] = React.useState("");
   const [last_name, setLastName] = React.useState("");
@@ -53,28 +76,33 @@ function AdminUserForm(props) {
   const [id, setId] = React.useState("");
 
   useEffect(() => {
-    if (props?.detail_user !== null) {
-      const data = props.detail_user;
-      setButtonTitle("Chỉnh sửa");
-      setIsEdit(true);
-      setId(data.id);
-      setFirstName(data.first_name);
-      setLastName(data.last_name);
-      setEmail(data.email);
-      if (data.gender === "male") {
-        setGender({
-          id: 0,
-          value: "male",
-          label: "Nam",
-        });
-      } else {
-        setGender({
-          id: 1,
-          value: "female",
-          label: "Nữ",
-        });
+    if (
+      props.detail_user !== null ||
+      Object.keys(props?.detail_user).length > 0
+    ) {
+      const data = props?.detail_user;
+      if (data) {
+        setButtonTitle("Chỉnh sửa");
+        setIsEdit(true);
+        setId(data.id);
+        setFirstName(data.first_name);
+        setLastName(data.last_name);
+        setEmail(data.email);
+        if (data.gender === "male") {
+          setGender({
+            id: 0,
+            value: "male",
+            label: "Nam",
+          });
+        } else {
+          setGender({
+            id: 1,
+            value: "female",
+            label: "Nữ",
+          });
+        }
+        setDateOfBirth(moment.utc(data.date_of_birth).valueOf());
       }
-      setDateOfBirth(moment.utc(data.date_of_birth).valueOf());
     }
   }, []);
 
@@ -167,7 +195,7 @@ function AdminUserForm(props) {
     let result;
     if (!isEdit) {
       result = await axios.post(
-        `https://localhost:8000/api/user/${action}`,
+        `http://localhost:8000/api/user/${action}`,
         body,
         {
           headers: {
@@ -179,7 +207,7 @@ function AdminUserForm(props) {
       );
     } else {
       result = await axios.put(
-        `https://localhost:8000/api/user/${action}`,
+        `http://localhost:8000/api/user/${action}`,
         body,
         {
           headers: {
@@ -216,23 +244,13 @@ function AdminUserForm(props) {
           <Col xs={6}>
             <Form.Group className="mb-3">
               <Form.Label className="font-weight-bold">Họ</Form.Label>
-              <TextField
-                value={first_name}
-                onChange={changeFirstName}
-                fullWidth
-                variant="filled"
-              />
+              <Form.Control value={first_name} onChange={changeFirstName} />
             </Form.Group>
           </Col>
           <Col xs={6}>
             <Form.Group className="mb-3">
               <Form.Label className="font-weight-bold">Tên</Form.Label>
-              <TextField
-                value={last_name}
-                onChange={changeLastName}
-                fullWidth
-                variant="filled"
-              />
+              <Form.Control value={last_name} onChange={changeLastName} />
             </Form.Group>
           </Col>
           <Col xs={6}>
@@ -243,8 +261,24 @@ function AdminUserForm(props) {
                   inputFormat="yyyy-MM-dd"
                   value={date_of_birth}
                   onChange={changeDateOfBirth}
-                  renderInput={(params) => (
-                    <TextField {...params} fullWidth variant="filled" />
+                  renderInput={({ inputRef, inputProps, InputProps }) => (
+                    <Box
+                      sx={{
+                        width: "100%",
+                        position: "relative",
+                      }}
+                    >
+                      <BootstrapInput ref={inputRef} {...inputProps} />
+                      <div
+                        style={{
+                          position: "absolute",
+                          right: "12px",
+                          top: "22px",
+                        }}
+                      >
+                        {InputProps?.endAdornment}
+                      </div>
+                    </Box>
                   )}
                 />
               </LocalizationProvider>
@@ -265,19 +299,14 @@ function AdminUserForm(props) {
           <Col xs={6}>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label className="font-weight-bold">Email</Form.Label>
-              <TextField
-                value={email}
-                onChange={changeEmail}
-                fullWidth
-                variant="filled"
-              />
+              <Form.Control value={email} onChange={changeEmail} />
             </Form.Group>
           </Col>
           <Col xs={6}>
             {!isEdit && (
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label className="font-weight-bold">Mật khẩu</Form.Label>
-                <TextField
+                <Form.Control
                   value={password}
                   type="password"
                   onChange={changePassword}

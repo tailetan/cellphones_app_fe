@@ -104,7 +104,7 @@ export default function Comment(props) {
       window.location.pathname.lastIndexOf("/") + 1
     );
 
-    const url = `https://localhost:8000/api/product/review/${id}`;
+    const url = `http://localhost:8000/api/product/review/${id}`;
 
     const body = {
       reviewer_name: name,

@@ -12,7 +12,7 @@ class Laptop extends React.Component {
   };
 
   componentDidMount() {
-    const url = "https://localhost:8000/api/getRecommendedLaptops";
+    const url = "http://localhost:8000/api/getRecommendedLaptops";
     axios
       .get(url, {
         headers: {

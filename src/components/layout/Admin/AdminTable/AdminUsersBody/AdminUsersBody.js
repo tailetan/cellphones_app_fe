@@ -47,7 +47,7 @@ function AdminUsersBody(props) {
   });
 
   const editDialog = async (id) => {
-    const result = await axios.get(`https://localhost:8000/api/users/${id}`, {
+    const result = await axios.get(`http://localhost:8000/api/users/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
         "Access-Control-Allow-Origin": "*",

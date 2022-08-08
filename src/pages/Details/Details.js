@@ -39,7 +39,7 @@ const Toast = Swal.mixin({
 
 function handleClick(event) {
   event.preventDefault();
-  console.info("You clicked a breadcrumb.");
+  window.location.href = "/";
 }
 
 function Details() {
@@ -74,15 +74,12 @@ function Details() {
 
   const handleDetails = async (id) => {
     setLoading(false);
-    const result = await axios.get(
-      `https://localhost:8000/api/products/${id}`,
-      {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-        },
-      }
-    );
+    const result = await axios.get(`http://localhost:8000/api/products/${id}`, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+      },
+    });
     if (result.data.length > 0) {
       setDetails(result.data[0]);
       setLoading(true);
@@ -92,7 +89,7 @@ function Details() {
   const handleReview = async (id) => {
     setLoading(true);
     const result = await axios.get(
-      `https://localhost:8000/api/product/list-review/${id}`,
+      `http://localhost:8000/api/product/list-review/${id}`,
       {
         headers: {
           "Access-Control-Allow-Origin": "*",
@@ -165,8 +162,8 @@ function Details() {
       className="font-12 text-black font-weight-semi"
       key="1"
       color="inherit"
-      href="/"
       onClick={handleClick}
+      style={{ cursor: "pointer" }}
     >
       <HomeRoundedIcon sx={{ mr: 0.5 }} fontSize="inherit" color="red" />
       Trang chủ

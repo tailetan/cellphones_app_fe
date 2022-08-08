@@ -38,7 +38,7 @@ function ForgotPassword({ changeToLoginForm }) {
   });
   const onSubmit = async (data) => {
     try {
-      await axios.post("https://localhost:8000/api/forget-password", data, {
+      await axios.post("http://localhost:8000/api/forget-password", data, {
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",

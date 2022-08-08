@@ -12,7 +12,7 @@ class Accessory extends React.Component {
   };
 
   componentDidMount() {
-    const url = `https://localhost:8000/api/getRecommendedAccessories`;
+    const url = `http://localhost:8000/api/getRecommendedAccessories`;
     axios
       .get(url, {
         headers: {

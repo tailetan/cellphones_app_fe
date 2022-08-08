@@ -14,7 +14,7 @@ class Phone extends React.Component {
   };
 
   componentDidMount() {
-    const url = "https://localhost:8000/api/getRecommendedPhones";
+    const url = "http://localhost:8000/api/getRecommendedPhones";
     axios
       .get(url, {
         headers: {

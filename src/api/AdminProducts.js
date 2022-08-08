@@ -10,7 +10,7 @@ export const getAllProducts = async ({
   date,
 } = {}) => {
   const queryStringArray = [];
-  let url = "https://localhost:8000/api/products";
+  let url = "http://localhost:8000/api/products";
   let data = {};
 
   if (paginate) {
@@ -73,11 +73,14 @@ export const createProduct = async (body) => {
       Authorization: "Bearer " + localStorage.getItem("token"),
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+      "X-CSRF-TOKEN": document.head
+        .querySelector('meta[name="csrf-token"]')
+        ?.getAttribute("content"),
     },
   };
 
   await axios
-    .post("https://localhost:8000/api/product/create", body, config)
+    .post("http://localhost:8000/api/product/create", body, config)
     .then((result) => {
       data = { ...result.data };
     })
@@ -100,7 +103,7 @@ export const deleteProduct = async (id) => {
   };
 
   await axios
-    .delete(`https://localhost:8000/api/product/delete/${id}`, config)
+    .delete(`http://localhost:8000/api/product/delete/${id}`, config)
     .then((result) => {
       data = { ...result.data };
     })
@@ -123,7 +126,7 @@ export const getProductById = async (id) => {
   };
 
   await axios
-    .get(`https://localhost:8000/api/products/${id}`, config)
+    .get(`http://localhost:8000/api/products/${id}`, config)
     .then((result) => {
       data = { ...result.data };
     })
@@ -146,7 +149,7 @@ export const updateProduct = async (id, body) => {
   };
 
   await axios
-    .put(`https://localhost:8000/api/product/update/${id}`, body, config)
+    .put(`http://localhost:8000/api/product/update/${id}`, body, config)
     .then((result) => {
       data = { ...result.data };
     })

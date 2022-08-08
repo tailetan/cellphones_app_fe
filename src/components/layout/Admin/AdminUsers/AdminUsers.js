@@ -1,6 +1,7 @@
 import * as React from "react";
 
-import { Avatar, Chip, TextField } from "@mui/material";
+import { Avatar, Chip } from "@mui/material";
+import { Form } from "react-bootstrap";
 import {
   changePage,
   setCurrentSearch,
@@ -24,7 +25,7 @@ import UserTableHeading from "../../../../assets/data/user-table-heading.json";
 import { connect } from "react-redux";
 import { getAllUsers } from "../../../../api/AdminUser";
 import { mapStateToProps } from "../../../../redux/useSelector.js";
-
+import "./adminusers.css";
 class AdminUser extends React.Component {
   constructor(props) {
     super(props);
@@ -88,12 +89,13 @@ class AdminUser extends React.Component {
         <div className="acp-header">
           <p>DANH SÁCH USERS</p>
           <div className="d-flex">
-            <TextField
+            <Form.Control
               fullWidth
               variant="filled"
               value={this.props.admin.search}
               onChange={this.handleChangeSearch}
               placeholder="Tìm kiếm"
+              className="custom"
             />
             <Avatar
               sx={{

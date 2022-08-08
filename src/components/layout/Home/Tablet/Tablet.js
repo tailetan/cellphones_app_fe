@@ -12,7 +12,7 @@ class Tablet extends React.Component {
   };
 
   componentDidMount() {
-    const url = "https://localhost:8000/api/getRecommendedTablets";
+    const url = "http://localhost:8000/api/getRecommendedTablets";
     axios
       .get(url, {
         headers: {

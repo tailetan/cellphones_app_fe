@@ -51,7 +51,7 @@ function ResetPassword() {
       temp_data.password_confirmation = data.password;
       temp_data.token = token;
 
-      await axios.post("https://localhost:8000/api/reset-password", temp_data, {
+      await axios.post("http://localhost:8000/api/reset-password", temp_data, {
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",

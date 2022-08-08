@@ -55,7 +55,7 @@ function AdminLogin() {
 
   const callLogin = async () => {
     Notiflix.Block.pulse("#admin-login-form", "Đang đăng nhập vui lòng đợi");
-    const url = "https://localhost:8000/api/login";
+    const url = "http://localhost:8000/api/login";
     const body = { email: values.email, password: values.password };
     try {
       const result = await axios.post(url, body, {

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getAllBills = async ({ paginate, page, status, sort } = {}) => {
   let queryStringArray = [];
-  let url = "https://localhost:8000/api/orders";
+  let url = "http://localhost:8000/api/orders";
   let data = {};
 
   if (paginate) {
@@ -60,7 +60,7 @@ export const deleteBill = async (id) => {
   };
 
   await axios
-    .delete(`https://localhost:8000/api/orders/delete/${id}`, config)
+    .delete(`http://localhost:8000/api/orders/delete/${id}`, config)
     .then((result) => {
       data = { ...result.data };
     })

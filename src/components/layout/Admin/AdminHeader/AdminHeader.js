@@ -32,7 +32,7 @@ function Header() {
 
   const checkLogin = async () => {
     if (localStorage.getItem("token")) {
-      const response = await axios.get("https://localhost:8000/api/me", {
+      const response = await axios.get("http://localhost:8000/api/me", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
           "Access-Control-Allow-Origin": "*",
@@ -46,7 +46,7 @@ function Header() {
 
   const logout = async () => {
     await axios.post(
-      "https://localhost:8000/api/logout",
+      "http://localhost:8000/api/logout",
       {},
       {
         headers: {

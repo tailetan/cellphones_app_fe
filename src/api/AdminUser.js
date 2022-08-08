@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getAllUsers = async ({ paginate, page, sort, search } = {}) => {
   const queryStringArray = [];
-  let url = "https://localhost:8000/api/users";
+  let url = "http://localhost:8000/api/users";
   let data = {};
 
   if (paginate) {
@@ -58,7 +58,7 @@ export const deleteUser = async (id) => {
   };
 
   await axios
-    .delete(`https://localhost:8000/api/user/delete/${id}`, config)
+    .delete(`http://localhost:8000/api/user/delete/${id}`, config)
     .then((result) => {
       data = { ...result.data };
     })

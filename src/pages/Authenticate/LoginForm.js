@@ -39,16 +39,12 @@ function LoginForm() {
   });
   const onSubmit = async (data) => {
     try {
-      const result = await axios.post(
-        "https://localhost:8000/api/login",
-        data,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-          },
-        }
-      );
+      const result = await axios.post("http://localhost:8000/api/login", data, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        },
+      });
       const { token } = result.data;
       localStorage.setItem("user_login_token", token);
       Toast.fire({

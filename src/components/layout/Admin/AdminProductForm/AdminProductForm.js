@@ -2,6 +2,8 @@ import "./adminproductform.css";
 
 import * as React from "react";
 
+import { Form } from "react-bootstrap";
+
 import {
   Avatar,
   Button,
@@ -9,7 +11,6 @@ import {
   InputAdornment,
   Stack,
   Switch,
-  TextField,
   Typography,
 } from "@mui/material";
 import {
@@ -549,13 +550,15 @@ const AdminProductForm = (props) => {
                 Tên sản phẩm
                 <span className="text-red">*</span>
               </p>
-              <TextField
+              <Form.Control
                 fullWidth
-                variant="filled"
-                helperText="Vui lòng nhập tên sản phẩm có độ dài ít nhất là 12"
                 value={product_name}
                 onChange={handleChangeProductName}
+                className="form-control-custom"
               />
+              <Form.Text>
+                Vui lòng nhập tên sản phẩm có độ dài ít nhất là 12
+              </Form.Text>
             </Grid>
             <Grid item xs={12}>
               <p className="m-b-4 font-weight-semi">
@@ -589,7 +592,7 @@ const AdminProductForm = (props) => {
                 value={price}
                 variant="filled"
                 fullWidth
-                customInput={TextField}
+                customInput={Form.Control}
                 thousandsGroupStyle="thousand"
                 thousandSeparator="."
                 decimalSeparator=","
@@ -619,10 +622,8 @@ const AdminProductForm = (props) => {
             </Grid>
             {status && (
               <Grid item xs={12}>
-                <TextField
+                <Form.Control
                   fullWidth
-                  variant="filled"
-                  helperText="Vui lòng nhập số lượng sản phẩm"
                   value={quantity}
                   onChange={() => {
                     if (event.target.value >= 1 || event.target.value === "") {
@@ -632,6 +633,7 @@ const AdminProductForm = (props) => {
                     }
                   }}
                 />
+                <Form.Text>Vui lòng nhập số lượng sản phẩm</Form.Text>
               </Grid>
             )}
             <Grid item xs={12}>
@@ -669,12 +671,7 @@ const AdminProductForm = (props) => {
                 </Grid>
                 <Grid item xs={12}>
                   <p className="m-b-4 font-weight-bold">Giá giảm</p>
-                  <TextField
-                    fullWidth
-                    variant="filled"
-                    disabled
-                    value={salePrice}
-                  />
+                  <Form.Control fullWidth disabled value={salePrice} />
                 </Grid>
               </Grid>
             )}
@@ -689,11 +686,10 @@ const AdminProductForm = (props) => {
                     <span className="text-red">*</span>
                   </p>
                   <div className="d-flex align-center">
-                    <TextField
+                    <Form.Control
                       fullWidth
                       value={item.value}
                       onChange={() => handleImageArray(event, idx)}
-                      variant="filled"
                     />
                     {imageArray.length > 1 && (
                       <Avatar
@@ -730,20 +726,18 @@ const AdminProductForm = (props) => {
                     Thông số #{idx + 1}
                     <span className="text-red">*</span>
                   </p>
-                  <TextField
+                  <Form.Control
                     onChange={() => skuChangeKey(event, idx)}
                     value={item.key}
                     fullWidth
                     placeholder={`Tên thông số ${idx + 1}`}
-                    variant="filled"
                   />
                   <div className="d-flex align-center m-t-2">
-                    <TextField
+                    <Form.Control
                       onChange={() => skuChangeValue(event, idx)}
                       value={item.value}
                       fullWidth
                       placeholder="Nội dung"
-                      variant="filled"
                     />
                     {skuArray.length > 1 && (
                       <Avatar

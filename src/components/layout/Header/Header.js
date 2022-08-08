@@ -64,7 +64,7 @@ function Header() {
     handleCart();
     const user_token = localStorage.getItem("user_login_token");
     if (user_token) {
-      const result = await axios.get("https://localhost:8000/api/me", {
+      const result = await axios.get("http://localhost:8000/api/me", {
         headers: {
           Authorization: `Bearer ${user_token}`,
           "Access-Control-Allow-Origin": "*",
@@ -89,7 +89,7 @@ function Header() {
 
   const logout = async () => {
     await axios.post(
-      "https://localhost:8000/api/logout",
+      "http://localhost:8000/api/logout",
       {},
       {
         headers: {

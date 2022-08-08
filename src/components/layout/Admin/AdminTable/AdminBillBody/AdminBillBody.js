@@ -54,7 +54,7 @@ function AdminBillBody(props) {
       zindex: 2000,
     });
     const result = await axios.put(
-      `https://localhost:8000/api/orders/update/${id}`,
+      `http://localhost:8000/api/orders/update/${id}`,
       {
         status,
       },

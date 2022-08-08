@@ -61,7 +61,7 @@ function RegisterForm({ changeToLoginForm }) {
         const temp_data = { ...data };
         temp_data.date_of_birth = date_of_birth;
         const result = await axios.post(
-          "https://localhost:8000/api/register",
+          "http://localhost:8000/api/register",
           temp_data,
           {
             headers: {

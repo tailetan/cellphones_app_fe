@@ -131,7 +131,7 @@ function Cart() {
         cart: cartSend,
       };
       const result = await axios.post(
-        "https://localhost:8000/api/orders",
+        "http://localhost:8000/api/orders",
         body,
         {
           headers: {

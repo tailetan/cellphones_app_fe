@@ -12,6 +12,7 @@ function Menu({ menu }) {
   };
 
   const goToShopWithBrand = (name, brand) => {
+    if (brand === "Mac") brand = "Apple";
     if (name === "Điện thoại")
       window.location.href = `/shop?category=mobile&brand=${brand}`;
     if (name === "Laptop, PC, Màn hình")
@@ -84,6 +85,7 @@ function Menu({ menu }) {
                               "Lenovo",
                               "Asus",
                               "Acer",
+                              "Mac",
                             ].includes(itemChild.name)
                               ? "text-black"
                               : "text-gray"
@@ -104,6 +106,7 @@ function Menu({ menu }) {
                                   "Lenovo",
                                   "Asus",
                                   "Acer",
+                                  "Mac",
                                 ].includes(itemChild.name)
                               ) {
                                 goToShopWithBrand(i.name, itemChild.name);

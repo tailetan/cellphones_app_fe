@@ -48,6 +48,7 @@ function Details() {
   const [details, setDetails] = React.useState({});
   const [reviews, setReviews] = React.useState([]);
   const [scrollPosition, setScrollPosition] = React.useState(0);
+  const [loading, setLoading] = React.useState(true);
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
@@ -72,8 +73,9 @@ function Details() {
   }, []);
 
   const handleDetails = async (id) => {
+    setLoading(false);
     const result = await axios.get(
-      `https://d731-42-115-169-248.ap.ngrok.io/api/products/${id}`,
+      `https://localhost:8000/api/products/${id}`,
       {
         headers: {
           "Access-Control-Allow-Origin": "*",
@@ -83,12 +85,14 @@ function Details() {
     );
     if (result.data.length > 0) {
       setDetails(result.data[0]);
+      setLoading(true);
     }
   };
 
   const handleReview = async (id) => {
+    setLoading(true);
     const result = await axios.get(
-      `https://d731-42-115-169-248.ap.ngrok.io/api/product/list-review/${id}`,
+      `https://localhost:8000/api/product/list-review/${id}`,
       {
         headers: {
           "Access-Control-Allow-Origin": "*",
@@ -97,6 +101,7 @@ function Details() {
       }
     );
     setReviews(result.data);
+    setLoading(false);
   };
 
   const handleBuy = () => {
@@ -192,10 +197,10 @@ function Details() {
       <div>
         <Header />
         <main style={{ paddingTop: "64px", position: "relative" }}>
-          {Object.keys(details).length === 0 && (
+          {!loading && Object.keys(details).length === 0 && (
             <img src={NotFound} width="100%" />
           )}
-          {Object.keys(details).length > 0 && (
+          {!loading && Object.keys(details).length > 0 && (
             <>
               <div
                 className="p-2 shop-box-shadow"

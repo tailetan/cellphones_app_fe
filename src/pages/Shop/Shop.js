@@ -13,7 +13,7 @@ import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRound
 
 function handleClick(event) {
   event.preventDefault();
-  console.info("You clicked a breadcrumb.");
+  window.location.href = "/";
 }
 
 function Shop() {
@@ -171,8 +171,8 @@ function Shop() {
       className="font-12 text-black font-weight-semi"
       key="1"
       color="inherit"
-      href="/"
       onClick={handleClick}
+      style={{ cursor: "pointer" }}
     >
       <HomeRoundedIcon sx={{ mr: 0.5 }} fontSize="inherit" color="red" />
       Trang chủ

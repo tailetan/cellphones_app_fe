@@ -54,7 +54,7 @@ function AdminBillBody(props) {
       zindex: 2000,
     });
     const result = await axios.put(
-      `https://d731-42-115-169-248.ap.ngrok.io/api/orders/update/${id}`,
+      `https://localhost:8000/api/orders/update/${id}`,
       {
         status,
       },

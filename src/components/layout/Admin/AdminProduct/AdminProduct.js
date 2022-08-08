@@ -3,6 +3,7 @@ import "./adminproduct.css";
 import * as React from "react";
 
 import { Avatar, Chip } from "@mui/material";
+import { Form } from "react-bootstrap";
 import {
   changePage,
   setCurrentSearch,
@@ -22,7 +23,7 @@ import ProductTableHeading from "../../../../assets/data/admin-product-heading.j
 import PropTypes from "prop-types";
 import RestartAltRoundedIcon from "@mui/icons-material/RestartAltRounded";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
-import TextField from "@mui/material/TextField";
+
 import { connect } from "react-redux";
 import { getAllProducts } from "../../../../api/AdminProducts.js";
 import { mapStateToProps } from "../../../../redux/useSelector.js";
@@ -87,55 +88,57 @@ class AdminProduct extends React.Component {
 
   render() {
     return (
-      <div className="admin-card-product">
-        <div className="acp-header">
-          <p>DANH SÁCH SẢN PHẨM</p>
-          <div className="d-flex">
-            <TextField
-              fullWidth
-              variant="filled"
-              value={this.props.admin.search}
-              onChange={this.handleChangeSearch}
-              placeholder="Tìm kiếm"
-            />
-            <Avatar
-              sx={{
-                bgcolor: "red.main",
-                cursor: "pointer",
-                marginLeft: "12px",
-              }}
-              variant="rounded"
-              onClick={this.searchProduct}
-            >
-              <SearchRoundedIcon />
-            </Avatar>
-            <Avatar
-              sx={{
-                bgcolor: "red.main",
-                cursor: "pointer",
-                marginLeft: "12px",
-              }}
-              variant="rounded"
-              onClick={this.resetAll}
-            >
-              <RestartAltRoundedIcon />
-            </Avatar>
+      <Form>
+        <div className="admin-card-product">
+          <div className="acp-header">
+            <p>DANH SÁCH SẢN PHẨM</p>
+            <div className="d-flex">
+              <Form.Control
+                fullWidth
+                value={this.props.admin.search}
+                onChange={this.handleChangeSearch}
+                placeholder="Tìm kiếm"
+                id="search-product"
+              />
+              <Avatar
+                sx={{
+                  bgcolor: "red.main",
+                  cursor: "pointer",
+                  marginLeft: "12px",
+                }}
+                variant="rounded"
+                onClick={this.searchProduct}
+              >
+                <SearchRoundedIcon />
+              </Avatar>
+              <Avatar
+                sx={{
+                  bgcolor: "red.main",
+                  cursor: "pointer",
+                  marginLeft: "12px",
+                }}
+                variant="rounded"
+                onClick={this.resetAll}
+              >
+                <RestartAltRoundedIcon />
+              </Avatar>
+            </div>
+          </div>
+          <div className="acp-body">
+            {this.props.admin.current_search && (
+              <>
+                <p className="m-b-4 font-weight-bold">Từ khóa tìm kiếm</p>
+                <Chip
+                  label={this.props.admin.current_search}
+                  sx={{ backgroundColor: "blue.main", color: "white.main" }}
+                />
+                <br />
+              </>
+            )}
+            <AdminTable rows={this.props.admin.data} heading={this.headCells} />
           </div>
         </div>
-        <div className="acp-body">
-          {this.props.admin.current_search && (
-            <>
-              <p className="m-b-4 font-weight-bold">Từ khóa tìm kiếm</p>
-              <Chip
-                label={this.props.admin.current_search}
-                sx={{ backgroundColor: "blue.main", color: "white.main" }}
-              />
-              <br />
-            </>
-          )}
-          <AdminTable rows={this.props.admin.data} heading={this.headCells} />
-        </div>
-      </div>
+      </Form>
     );
   }
 }

@@ -60,7 +60,7 @@ function AdminUsersBody(props) {
 
   const confirmDialog = (id) => {
     Swal.fire({
-      text: "Bạn chắc chắn muốn lưu trữ sản phẩm này",
+      text: "Bạn chắc chắn muốn vô hiệu hoá người dùng này?",
       icon: "question",
       showCancelButton: true,
       focusConfirm: false,

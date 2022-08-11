@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Avatar, Chip, Stack, Tooltip } from "@mui/material";
-import { deleteBill, getAllBills } from "../../../../../api/AdminBills";
+import { getAllBills } from "../../../../../api/AdminBills";
 import {
   setData,
   setFrom,
@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import CachedRoundedIcon from "@mui/icons-material/CachedRounded";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
-import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
+// import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
 import LocalShippingRoundedIcon from "@mui/icons-material/LocalShippingRounded";
 import Notiflix from "notiflix";
 import PropTypes from "prop-types";
@@ -100,7 +100,7 @@ function AdminBillBody(props) {
 
   const confirmDialog = (id) => {
     Swal.fire({
-      text: "Bạn chắc chắn muốn lưu trữ đơn hàng này",
+      text: "Bạn chắc chắn muốn hủy đơn hàng này",
       icon: "question",
       showCancelButton: true,
       focusConfirm: false,
@@ -109,46 +109,7 @@ function AdminBillBody(props) {
       confirmButtonColor: "#d70018",
     }).then((result) => {
       if (result.isConfirmed) {
-        dispatch(setSkeleton(true));
-
-        let sort;
-        let status;
-
-        if (filter_status !== "") {
-          status = filter_status;
-        }
-
-        if (filter_sort !== "") {
-          sort = filter_sort;
-        }
-
-        deleteBill(id).then((result) => {
-          if (Object.keys(result).length === 0) {
-            dispatch(setSkeleton(false));
-            Toast.fire({
-              icon: "error",
-              title: "Xóa đơn hàng không thành công!",
-              background: "rgba(253, 241, 244, 1)",
-              color: "#d70018",
-            });
-          } else if (Object.keys(result).length > 0 && result.success) {
-            Toast.fire({
-              icon: "success",
-              title: "Xóa đơn hàng thành công!",
-              background: "rgba(243, 252, 245, 1)",
-              color: "#28a745",
-            });
-            getAllBills({ page: current_page, status, sort }).then((result) => {
-              const { data, from, to, last_page, per_page } = result;
-              dispatch(setFrom(from));
-              dispatch(setTo(to));
-              dispatch(setPerPage(per_page));
-              dispatch(setTotalPage(last_page));
-              dispatch(setData(data));
-              dispatch(setSkeleton(false));
-            });
-          }
-        });
+        changeStatus(id, "canceled");
       }
     });
   };
@@ -209,7 +170,7 @@ function AdminBillBody(props) {
             }}
           />
         )}
-        {row.status === "cancelled" && (
+        {row.status === "canceled" && (
           <Chip
             label="Đã hủy"
             sx={{
@@ -269,33 +230,24 @@ function AdminBillBody(props) {
             <Avatar
               sx={{
                 bgcolor: `${
-                  row.status !== "cancelled" && row.status !== "completed"
+                  row.status !== "canceled" && row.status !== "completed"
                     ? "blue.light"
                     : "grey.main"
                 }`,
                 cursor: `${
-                  row.status !== "cancelled" && row.status !== "completed"
+                  row.status !== "canceled" && row.status !== "completed"
                     ? "pointer"
                     : ""
                 }`,
               }}
               variant="rounded"
               onClick={() => {
-                if (row.status !== "cancelled" && row.status !== "completed") {
-                  changeStatus(row.id, "cancelled");
+                if (row.status !== "canceled" && row.status !== "completed") {
+                  confirmDialog(row.id);
                 }
               }}
             >
               <CancelRoundedIcon />
-            </Avatar>
-          </Tooltip>
-          <Tooltip title="Lưu trữ">
-            <Avatar
-              onClick={() => confirmDialog(row.id)}
-              sx={{ bgcolor: "red.main", cursor: "pointer" }}
-              variant="rounded"
-            >
-              <DeleteRoundedIcon />
             </Avatar>
           </Tooltip>
         </Stack>

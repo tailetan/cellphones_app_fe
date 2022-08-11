@@ -81,10 +81,7 @@ function Header() {
         <Toolbar>
           <Box sx={{ flexGrow: 1 }}>
             <div className="logo">
-              <a
-                href="https://cellphones.com.vn/"
-                title="CellphoneS - Hệ thống bán lẻ điện thoại"
-              >
+              <a href="/" title="CellphoneS - Hệ thống bán lẻ điện thoại">
                 <img src={Logo} alt="Cellphones" width="100%" height="100%" />
               </a>
             </div>

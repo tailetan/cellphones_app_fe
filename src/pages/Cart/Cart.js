@@ -7,16 +7,17 @@ import ChevronLeftRoundedIcon from "@mui/icons-material/ChevronLeftRounded";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
 import { QuantityPicker } from "react-qty-picker";
 import _ from "lodash";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Notiflix from "notiflix";
+import { setTotalCart } from "../../redux/action";
 
 function Cart() {
   const [cart, setCart] = React.useState([]);
   // eslint-disable-next-line no-unused-vars
   const [orderAmount, setOrderAmount] = React.useState();
-
+  const dispatch = useDispatch();
   const userId = useSelector((state) => state.admin.userId);
 
   React.useEffect(() => {
@@ -36,6 +37,7 @@ function Cart() {
     const findIndex = tempCart.findIndex((e) => e.id === id);
     _.remove(tempCart, { id: tempCart[findIndex].id });
     setCart(tempCart);
+    handleCartTotal(tempCart);
     localStorage.setItem("cart", JSON.stringify(tempCart));
   };
 
@@ -44,6 +46,7 @@ function Cart() {
     const findIndex = tempCart.findIndex((e) => e.id === id);
     tempCart[findIndex].quantity = quantity;
     setCart(tempCart);
+    handleCartTotal(tempCart);
     localStorage.setItem("cart", JSON.stringify(tempCart));
   };
 
@@ -113,6 +116,19 @@ function Cart() {
     },
   });
 
+  const handleCartTotal = (cart) => {
+    if (cart.length > 0) {
+      const initialValue = 0;
+      const sumWithInitial = cart.reduce(
+        (previousValue, currentValue) => previousValue + currentValue.quantity,
+        initialValue
+      );
+      dispatch(setTotalCart(sumWithInitial));
+    } else {
+      dispatch(setTotalCart(0));
+    }
+  };
+
   const placeOrder = async () => {
     if (localStorage.getItem("user_login_token")) {
       Notiflix.Block.pulse("#root", "Đang xử lý...");
@@ -149,7 +165,9 @@ function Cart() {
           color: "#28a745",
         });
         localStorage.removeItem("cart");
-        window.location.href = "/";
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 3000);
       } else {
         Toast.fire({
           icon: "error",

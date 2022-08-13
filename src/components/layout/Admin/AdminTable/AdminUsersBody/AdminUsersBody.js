@@ -135,7 +135,7 @@ function AdminUsersBody(props) {
     <>
       <StyledTableCell align="left">{index + 1}</StyledTableCell>
       <StyledTableCell component="th" id={labelId} scope="row">
-        {row.full_name}
+        {row.first_name}&nbsp;{row.last_name}
       </StyledTableCell>
       <StyledTableCell align="left">{row.date_of_birth}</StyledTableCell>
       <StyledTableCell align="left">

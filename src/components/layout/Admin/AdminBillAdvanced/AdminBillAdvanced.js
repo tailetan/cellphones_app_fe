@@ -189,7 +189,7 @@ class AdminProductAdvanced extends React.Component {
               label="Hoàn thành"
             />
             <FormControlLabel
-              value="cancelled"
+              value="canceled"
               control={<Radio color="red" onClick={this.handleStatus} />}
               label="Đã hủy"
             />
